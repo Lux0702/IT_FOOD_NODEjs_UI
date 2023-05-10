@@ -6,8 +6,8 @@
         android:layout_width="match_parent"
         android:orientation="horizontal" style="@style/groupStylecornerRadius_6">
         <ImageView android:id="@+id/imageEllipseTwentyTwo"
-            android:layout_height="@dimen/_60pxh"
-            android:layout_width="@dimen/_60pxh"
+            android:layout_height="@dimen/_70pxh"
+            android:layout_width="@dimen/_70pxh"
             android:scaleType="centerCrop" circular="@{true}"
             imageRes="@{@drawable/img_ellipse20_60x60}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse20_60x60"/>
@@ -29,8 +29,8 @@
                     android:layout_marginTop="@dimen/_3pxv"
                     android:layout_weight="0.7"
                     android:layout_width="0dp" android:singleLine="true"
-                    android:text="@string/lbl_water_melon"
-                    style="@style/txtMontserratromansemibold16" tools:text="@string/lbl_water_melon"/>
+                    android:text="Water melon"
+                    style="@style/txtMontserratromansemibold16" tools:text="Water melon"/>
                 <TextView android:ellipsize="end"
                     android:id="@+id/txtTimeTwo"
                     android:layout_height="wrap_content"
@@ -38,8 +38,8 @@
                     android:layout_marginStart="@dimen/_84pxh"
                     android:layout_weight="0.3"
                     android:layout_width="0dp" android:singleLine="true"
-                    android:text="@string/lbl_4_00pm"
-                    style="@style/txtMontserratromanregular12" tools:text="@string/lbl_4_00pm"/>
+                    android:text="4:00 pm"
+                    style="@style/txtMontserratromanregular12" tools:text="4:00 pm"/>
             </LinearLayout>
             <LinearLayout android:id="@+id/linearAMountSetting"
                 android:layout_height="wrap_content"
@@ -51,8 +51,8 @@
                     android:layout_marginTop="@dimen/_6pxv"
                     android:layout_weight="0.27"
                     android:layout_width="0dp" android:singleLine="true"
-                    android:text="@string/lbl_30"
-                    style="@style/txtMontserratromanmedium14_1" tools:text="@string/lbl_30"/>
+                    android:text="$30"
+                    style="@style/txtMontserratromanmedium14_1" tools:text="$30"/>
                 <LinearLayout android:id="@+id/linearRowpath"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_4pxv"
