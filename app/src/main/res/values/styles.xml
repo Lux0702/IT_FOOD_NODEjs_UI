@@ -1,563 +1,624 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="txtYuGothicUIlight33">
-        <item name="android:textSize">@dimen/_33pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
+    <style name="groupStylebluegray_400_63cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_bluegray_400_63_radius_10</item>
     </style>
-    <style name="txtYuGothicUIlight34">
-        <item name="android:textSize">@dimen/_34pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="groupStylecornerRadius">
-        <item name="android:background">@drawable/rectangle_border_yellow_800_radius_8</item>
-    </style>
-    <style name="etYuGothicUIregular16">
+    <style name="txtMontserratromansemibold16">
         <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="groupStyleyellow_800cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_yellow_800_radius_8</item>
-    </style>
-    <style name="txtYuGothicUIsemibold24_4">
-        <item name="android:textSize">@dimen/_24pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
-    <style name="txtYuGothicUIlight10_1">
-        <item name="android:textSize">@dimen/_10pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="txtMontserratromansemibold18">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtMontserratromansemibold12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtMontserratromansemibold14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtMontserratromansemibold15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="groupStylecornerRadius">
+        <item name="android:background">@drawable/rectangle_radius_10</item>
+    </style>
+    <style name="txtMontserratromanregular14_4">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanregular14_5">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/red_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanregular14_6">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtPoppinsmedium15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtPoppinsmedium15_1">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtPoppinsmedium16">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanregular14_1">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanregular14_2">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_902</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtPoppinsmedium18">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanregular14_3">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanlight9">
+        <item name="android:textSize">@dimen/_9pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">300</item>
+    </style>
+    <style name="txtPoppinsmedium14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtPoppinssemibold15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtPoppinssemibold12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/red_600</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
     <style name="groupStylewhite_A700">
         <item name="android:background">@drawable/rectangle_bg_white_a700</item>
     </style>
-    <style name="txtYuGothicUIsemibold16_1">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/orange_300</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="groupStylewhite_A702">
+        <item name="android:background">@drawable/rectangle_bg_white_a702</item>
+    </style>
+    <style name="txtMontserratromansemibold18_1">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
-    <style name="txtYuGothicUIsemibold16_2">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="txtMontserratromansemibold14_2">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900_75</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
-    <style name="txtYuGothicUIregular14_1">
+    <style name="txtMontserratromansemibold14_1">
         <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtMontserratromanmedium14_2">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_902</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanmedium14_1">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontezregular40">
+        <item name="android:textSize">@dimen/_40pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montez</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="txtYuGothicUIregular14_2">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/black_900_8b</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    <style name="txtMontserratromanbold17_1">
+        <item name="android:textSize">@dimen/_17pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txtSolidRoundedOutline">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="txtMontserratromanregular10">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_51_border_gray_500_1a_radius_32</item>
     </style>
     <style name="txtSolidRounded">
         <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_bg_red_50_radius_15</item>
+    </style>
+    <style name="txtMontserratromanbold20">
+        <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_yellow_800_radius_6</item>
-    </style>
-    <style name="txtYuGothicUIlight14">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight12">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight18">
-        <item name="android:textSize">@dimen/_18pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight16">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtPoppinsbold37">
-        <item name="android:textSize">@dimen/_37pxh</item>
-        <item name="android:textColor">@color/black_900</item>
-        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="groupStyleorange_50cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_orange_50_radius_18</item>
-    </style>
-    <style name="groupStylegray_201cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_gray_201_radius_6</item>
-    </style>
-    <style name="txtSolidRounded_5">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_8b</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_200_a2_radius_19</item>
-    </style>
-    <style name="txtYuGothicUIregular12">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="txtMontserratromanregular14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_901</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="groupStylebluegray_100cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_bluegray_100_radius_12</item>
+    <style name="txtMontserratromanbold22">
+        <item name="android:textSize">@dimen/_22pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtMontserratromanmedium12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanregular11">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanbold24">
+        <item name="android:textSize">@dimen/_24pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtMontserratromanregular12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="groupStylered_A400cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_30_13</item>
+    </style>
+    <style name="txtMontserratromanmedium14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanmedium16">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanbold28">
+        <item name="android:textSize">@dimen/_28pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtMontserratromanmedium18">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="etRoundedOutline">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900_75</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:background">@drawable/rectangle_border_bluegray_400_radius_22</item>
+    </style>
+    <style name="txtPoppinsmedium16_2">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
     </style>
     <style name="groupStylegray_200cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_gray_200_radius_6</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_200_radius_10</item>
     </style>
-    <style name="txtYuGothicUIregular13">
-        <item name="android:textSize">@dimen/_13pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="txtYuGothicUIlight20">
-        <item name="android:textSize">@dimen/_20pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtSolidRounded_1">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_8b</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_200_radius_6</item>
-    </style>
-    <style name="txtYuGothicUIregular14">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/black_900_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="txtSolidRounded_2">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_orange_300_radius_6</item>
-    </style>
-    <style name="txtSolidRounded_3">
+    <style name="txtPoppinsmedium16_1">
         <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_orange_300_radius_32</item>
-    </style>
-    <style name="txtYuGothicUIregular16">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="txtSolidRounded_4">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/orange_300</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_orange_300_63_radius_19</item>
-    </style>
-    <style name="txtYuGothicUIsemibold24_1">
-        <item name="android:textSize">@dimen/_24pxh</item>
-        <item name="android:textColor">@color/black_900</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-    </style>
-    <style name="txtPoppinsbold28">
-        <item name="android:textSize">@dimen/_28pxh</item>
-        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textColor">@color/gray_900_99</item>
         <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanbold20_1">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txtYuGothicUIsemibold24_3">
+    <style name="txtMontserratromanbold24_2">
         <item name="android:textSize">@dimen/_24pxh</item>
-        <item name="android:textColor">@color/black_900_a6</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:textColor">@color/bluegray_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="groupStylewhite_A700cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_4</item>
-    </style>
-    <style name="txtYuGothicUIsemibold24_2">
+    <style name="txtMontserratromanbold24_1">
         <item name="android:textSize">@dimen/_24pxh</item>
-        <item name="android:textColor">@color/black_900_8b</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txt">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    <style name="txtSolidRounded_1">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_bg_red_50_radius_15</item>
     </style>
-    <style name="txtYuGothicUIlight20_1">
+    <style name="txtMontserratromanregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight10">
-        <item name="android:textSize">@dimen/_10pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIregular16_7">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_900_a6</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="txtYuGothicUIregular16_6">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/orange_300</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="groupStyleblack_900_63cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_black_900_63_radius_15</item>
+    </style>
+    <style name="txtMontserratromansemibold15_1">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtMontserratromanbold14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtBentonSansMediumbentonsansmedium14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/bentonsans_medium</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="groupStylewhite_10">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_tl_16_tr_16</item>
-    </style>
-    <style name="txtYuGothicUIregular16_5">
+    <style name="txtMontserratromanbold16">
         <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txtYuGothicUIregular16_4">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/bluegray_400_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    <style name="groupStylewhite_A700cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_22</item>
     </style>
-    <style name="txtYuGothicUIregular16_9">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/white_A700_a6</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    <style name="txtMontserratromanbold17">
+        <item name="android:textSize">@dimen/_17pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txtYuGothicUIregular16_8">
+    <style name="etMontserratromanmedium12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/bluegray_400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="etMontserratromanmedium14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="btnSolidRounded_3">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_yellow_800_radius_6</item>
+    <style name="txtManroperegular16">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_901</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="txtYuGothicUIsemibold14_1">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/orange_300</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+    <style name="txtMontserratromanbold16_1">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="btnSolidRounded_9">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_15</item>
+    </style>
+    <style name="btnSolidRounded_4">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="android:background">@drawable/rectangle_bg_red_50_radius_15</item>
+    </style>
+    <style name="btnSolidRounded_3">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/white_A700_7f</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_23_88</item>
     </style>
     <style name="btnSolidRounded_2">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_8b</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_200_radius_6</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_10</item>
     </style>
     <style name="btnSolidRounded_1">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/orange_300_a6</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-        <item name="android:background">@drawable/rectangle_bg_orange_300_6c_radius_4</item>
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_23_88</item>
     </style>
-    <style name="txtYuGothicUIsemibold14_2">
+    <style name="btnSolidRounded_8">
         <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_14_5</item>
     </style>
-    <style name="txtYuGothicUIlight16_4">
+    <style name="btnSolidRounded_7">
         <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_15</item>
     </style>
-    <style name="txtYuGothicUIlight12_6">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
+    <style name="btnSolidRounded_6">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/red_A400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a702_radius_15</item>
     </style>
-    <style name="txtYuGothicUIlight16_2">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_900_a6</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight16_3">
+    <style name="btnSolidRounded_5">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400_radius_19_57</item>
     </style>
-    <style name="groupStylebluegray_100">
-        <item name="android:background">@drawable/rectangle_bg_bluegray_100</item>
+    <style name="txtBentonSansBoldbentonsansbold18">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/bentonsans_bold</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanregular16_1">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
     <style name="txtPoppinsregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="txtYuGothicUIlight12_1">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
+
+    <style name="etMontserratromanregular14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_901</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="groupStyleindigo_600cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_indigo_600_radius_8</item>
+
+    <style name="txtLatobold24">
+        <item name="android:textSize">@dimen/_24pxh</item>
+        <item name="android:textColor">@color/white_A701</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
-    <style name="txtYuGothicUIlight12_3">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_9d</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight12_2">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight16_1">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/orange_300</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="btnSolidRoundedOutline">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_yellow_800_radius_6</item>
-    </style>
-    <style name="txtYuGothicUIlight12_5">
+
+    <style name="btnSolidRounded">
         <item name="android:textSize">@dimen/_12pxh</item>
         <item name="android:textColor">@color/black_900</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="txtYuGothicUIlight12_4">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="etSolidRounded">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_51_radius_6</item>
-    </style>
-    <style name="groupStylecornerRadius_3">
-        <item name="android:background">@drawable/rectangle_radius_6</item>
-    </style>
-    <style name="groupStylecornerRadius_2">
-        <item name="android:background">@drawable/rectangle_border_black_900_6c_radius_8</item>
-    </style>
-    <style name="btnSolidRounded">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
-        <item name="android:background">@drawable/rectangle_bg_yellow_800_radius_8</item>
+        <item name="android:background">@drawable/rectangle_bg_yellow_700_radius_15</item>
     </style>
-    <style name="groupStylecornerRadius_5">
-        <item name="android:background">@drawable/rectangle_radius_10</item>
+    <style name="txtMontserratromanbold30">
+        <item name="android:textSize">@dimen/_30pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
+
     <style name="groupStylecornerRadius_4">
-        <item name="android:background">@drawable/rectangle_radius_40</item>
+        <item name="android:background">@drawable/rectangle_border_bluegray_400_radius_22</item>
     </style>
-    <style name="groupStyleamber_300_70cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_amber_300_70_radius_12</item>
+    <style name="txtBentonSansRegularbentonsansregular14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:fontFamily">@font/bentonsans_regular</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtMontserratromanmedium12_2">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromanmedium12_1">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/bluegray_400</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtMontserratromansemibold16_2">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_902</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
     <style name="groupStylecornerRadius_1">
-        <item name="android:background">@drawable/rectangle_radius_4</item>
+        <item name="android:background">@drawable/rectangle_border_red_a400_radius_30_13</item>
+    </style>
+    <style name="txtMontserratromansemibold16_1">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_901</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
     </style>
     <style name="groupStylewhite_1">
-        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_61</item>
+    </style>
+    <style name="txtBentonSansMediumbentonsansmedium33">
+        <item name="android:textSize">@dimen/_33pxh</item>
+        <item name="android:textColor">@color/black_901</item>
+        <item name="android:fontFamily">@font/bentonsans_medium</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
     <style name="groupStylewhite_3">
-        <item name="android:background">@drawable/rectangle_bg_white_a701</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_15</item>
     </style>
     <style name="groupStylewhite_2">
-        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_border_bluegray_400_radius_15</item>
     </style>
     <style name="etSolidRoundedOutline">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/black_900_75</item>
+        <item name="android:fontFamily">@font/bentonsans_regular</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_50_border_bluegray_400_1a_radius_8</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_15</item>
     </style>
     <style name="groupStylewhite_5">
-        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_20</item>
     </style>
     <style name="groupStylewhite_4">
         <item name="android:background">@drawable/rectangle_bg_white_a700_radius_10</item>
     </style>
-    <style name="groupStylewhite_7">
-        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
-    </style>
-    <style name="btnSolid">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a701</item>
-    </style>
-    <style name="groupStylewhite_6">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_8</item>
-    </style>
-    <style name="txtYuGothicUIsemibold16">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-    </style>
-    <style name="groupStylewhite_9">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900</item>
-    </style>
-    <style name="etSolid">
+    <style name="txtSolid">
         <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/bluegray_400</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:background">@drawable/rectangle_bg_red_a400</item>
+    </style>
+    <style name="groupStylered_A400_63cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_red_a400_63_radius_8</item>
+    </style>
+    <style name="txtPoppinslight20">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textFontWeight" tools:targetApi="p">300</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a701</item>
     </style>
-    <style name="groupStylewhite_8">
-        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
+    <style name="groupStylered_A401">
+        <item name="android:background">@drawable/rectangle_bg_red_a401</item>
     </style>
-    <style name="txtYuGothicUIsemibold14">
-        <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-    </style>
-    <style name="txtYuGothicUIsemibold12">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
-    </style>
-    <style name="txtYuGothicUIregular12_1">
-        <item name="android:textSize">@dimen/_12pxh</item>
-        <item name="android:textColor">@color/black_900_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="txtYuGothicUIregular16_3">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-    </style>
-    <style name="groupStylegray_1">
-        <item name="android:background">@drawable/rectangle_bg_gray_51_radius_6</item>
+    <style name="groupStyle">
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
     </style>
     <style name="groupStylecornerRadius_7">
-        <item name="android:background">@drawable/rectangle_radius_5</item>
+        <item name="android:background">@drawable/rectangle_border_red_a400_radius_8</item>
     </style>
-    <style name="txtYuGothicUIregular16_2">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_900_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    <style name="groupStylegray_1">
+        <item name="android:background">@drawable/rectangle_bg_gray_200_radius_25</item>
     </style>
     <style name="groupStylecornerRadius_6">
-        <item name="android:background">@drawable/rectangle_radius_19</item>
+        <item name="android:background">@drawable/rectangle_border_bluegray_100_radius_20</item>
     </style>
-    <style name="txtYuGothicUIregular16_1">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    <style name="groupStyleamber_800cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_amber_800_radius_15</item>
     </style>
-    <style name="groupStyleblue_A200cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_blue_a200_radius_8</item>
+    <style name="groupStylered_A400">
+        <item name="android:background">@drawable/rectangle_bg_red_a400</item>
     </style>
-    <style name="groupStyleorange_300cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_orange_300_radius_6</item>
+    <style name="groupStyleyellow_700cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_yellow_700_radius_19_5</item>
     </style>
-    <style name="txtYuGothicUIsemibold28">
-        <item name="android:textSize">@dimen/_28pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    <style name="groupStylered_A400_1">
+        <item name="android:background">@drawable/rectangle_bg_red_a400_63_radius_15</item>
     </style>
-    <style name="txtYuGothicUIsemibold24">
-        <item name="android:textSize">@dimen/_24pxh</item>
-        <item name="android:textColor">@color/black_905</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    <style name="groupStyleblack_900_3fcornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_black_900_3f_radius_20</item>
     </style>
-    <style name="etSolidRoundedOutline_1">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColor">@color/bluegray_400_94</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_gray_50_border_bluegray_400_1a_radius_8</item>
-    </style>
-    <style name="txtYuGothicUIlight34_1">
-        <item name="android:textSize">@dimen/_34pxh</item>
-        <item name="android:textColor">@color/yellow_800</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">300</item>
-    </style>
-    <style name="groupStylegray_51cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_gray_51_border_gray_500_1a_radius_27</item>
-    </style>
-    <style name="groupStylegray_50cornerRadius">
-        <item name="android:background">@drawable/rectangle_bg_gray_50_border_bluegray_400_1a_radius_8</item>
-    </style>
-    <style name="txtYuGothicUIbold14">
+    <style name="txtBentonSansRegularbentonsansregular14_1">
         <item name="android:textSize">@dimen/_14pxh</item>
-        <item name="android:textColor">@color/white_A700</item>
-        <item name="android:fontFamily">@font/yu_gothic_ui</item>
-        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:textColor">@color/black_900_75</item>
+        <item name="android:fontFamily">@font/bentonsans_regular</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
-    <style name="searchViewSearchform" parent="Widget.AppCompat.SearchView">
-        <item name="android:textSize">@dimen/_16pxh</item>
-        <item name="android:textColorPrimary">@color/bluegray_400</item>
-        <item name="android:textColorHint">@color/bluegray_400</item>
+    <style name="txtPoppinssemibold35">
+        <item name="android:textSize">@dimen/_35pxh</item>
+        <item name="android:textColor">@color/yellow_700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="txtPoppinsregular8">
+        <item name="android:textSize">@dimen/_8pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="groupStylepink_50cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_pink_50_radius_10</item>
+    </style>
+    <style name="txtPoppinssemibold12_1">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+    <style name="searchViewGroup1293" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColorPrimary">@color/gray_601</item>
+        <item name="android:textColorHint">@color/gray_601</item>
     </style>
 </resources>

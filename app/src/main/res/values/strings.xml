@@ -4,15 +4,17 @@
     <string name="loading">Loading?</string>
     <string name="no_internet_connection">No internet connection!</string>
     <!--TODO ENTER YOUR APP ID BELOW-->
-    <string name="facebook_app_id"/>
+    <string name="facebook_app_id" />
     <!--TODO ENTER YOUR APP ID BELOW (eg: fb0123456789)-->
     <string name="fb_login_protocol_scheme">fb</string>
     <!--TODO ENTER YOUR Client Token BELOW-->
-    <string name="facebook_client_token"/>
+    <string name="facebook_client_token" />
     <string name="lbl_continue">Continue</string>
     <string name="msg_western_austral">Western Australia</string>
     <string name="lbl_l">l</string>
+    <string name="lbl_remember_me">Remember me</string>
     <string name="lbl_61">+61</string>
+    <string name="msg_forgot_password">Forgot password?</string>
     <string name="lbl_chocolate_chip">Chocolate Chip</string>
     <string name="lbl_logout">Logout</string>
     <string name="lbl_take_away">Take away</string>
