@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".activity.Cart">
 
     <androidx.appcompat.widget.Toolbar
@@ -107,7 +108,7 @@
                 android:layout_marginTop="@dimen/_7pxv"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="5"
+                tools:itemCount="2"
                 tools:listitem="@layout/row_listellipsetwenty_two" />
 
             <androidx.appcompat.widget.AppCompatButton

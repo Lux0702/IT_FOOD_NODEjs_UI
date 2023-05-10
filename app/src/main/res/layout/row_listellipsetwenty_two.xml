@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data/>
+
     <LinearLayout android:id="@+id/linearRowellipsetwentyTwo"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                     android:id="@+id/txtTimeTwo"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_8pxv"
-                    android:layout_marginStart="@dimen/_84pxh"
+                    android:layout_marginStart="@dimen/_20pxh"
                     android:layout_weight="0.3"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="4:00 pm"
@@ -45,24 +45,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_1pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
-                <TextView android:ellipsize="end"
+
+                <TextView
                     android:id="@+id/txtPriceTwo"
+                    style="@style/txtMontserratromanmedium14_1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6pxv"
                     android:layout_weight="0.27"
-                    android:layout_width="0dp" android:singleLine="true"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="$30"
-                    style="@style/txtMontserratromanmedium14_1" tools:text="$30"/>
+                    tools:text="$30" />
                 <LinearLayout android:id="@+id/linearRowpath"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_4pxv"
                     android:layout_marginStart="@dimen/_143pxh"
-                    android:layout_weight="0.73"
+                    android:layout_weight="3"
                     android:layout_width="0dp" android:orientation="horizontal">
                     <LinearLayout android:gravity="center_horizontal"
                         android:id="@+id/linearIconMinus"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.45"
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:orientation="vertical" style="@style/groupStylered_A400_63cornerRadius">
                         <View android:background="@color/red_A400"
@@ -78,22 +82,29 @@
                         android:id="@+id/txtAmountTwo"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_12pxh"
-                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:letterSpacing="0.03"
                         android:singleLine="true"
                         android:text="@string/lbl_1"
                         style="@style/txtPoppinsmedium16_1" tools:text="@string/lbl_1"/>
-                    <ImageButton
-                        android:background="@drawable/rectangle_bg_red_a400_radius_8"
-                        android:id="@+id/btnGridTwo"
-                        android:layout_height="@dimen/_20pxh"
-                        android:layout_marginStart="@dimen/_13pxh"
-                        android:layout_width="@dimen/_19pxh"
-                        android:paddingHorizontal="@dimen/_5pxh"
-                        android:paddingVertical="@dimen/_5pxv"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_grid" tools:ignore="ContentDescription"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:background="@drawable/rectangle_bg_red_a400_radius_8"
+                            android:id="@+id/btnGridTwo"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_marginStart="@dimen/_13pxh"
+                            android:layout_width="@dimen/_19pxh"
+                            android:paddingHorizontal="@dimen/_5pxh"
+                            android:paddingVertical="@dimen/_5pxv"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_grid" tools:ignore="ContentDescription"/>
+                    </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
