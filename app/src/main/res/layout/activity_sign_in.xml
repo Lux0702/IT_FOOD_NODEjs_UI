@@ -270,7 +270,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSignInOne"
+                android:id="@+id/btnSignIn"
                 style="@style/btnSolidRounded_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -288,7 +288,7 @@
                 tools:text="@string/lbl_sign_in" />
 
             <TextView
-                android:id="@+id/txtConfirmation"
+                android:id="@+id/txtSignUp"
                 style="@style/txtMontserratromanregular12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
