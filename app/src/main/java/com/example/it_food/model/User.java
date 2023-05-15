@@ -1,25 +1,5 @@
 package com.example.it_food.model;
 
-<<<<<<< HEAD
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
-
-public class User implements Serializable {
-    @SerializedName("userId")
-    private String userId;
-
-    public User(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-=======
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -130,6 +110,5 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
->>>>>>> d90c5c6871bc5e4d5ccb0dfd0c018a59bfb7a32e
     }
 }
