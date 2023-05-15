@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,33 +13,34 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.IT_FOOD"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PaymentMedthod"
+            android:name=".activity.PaymentMedthod"
             android:exported="false" />
         <activity
-            android:name=".ConfirmOrder"
+            android:name=".activity.ConfirmOrder"
             android:exported="false" />
         <activity
-            android:name=".activity.Cart"
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".VerificationCodeActivity"
+            android:name=".activity.VerificationCodeActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".activity.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activity.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.Cart"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
