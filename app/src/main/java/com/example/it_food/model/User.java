@@ -1,4 +1,4 @@
-package com.example.it_food.activity.model;
+package com.example.it_food.model;
 
 import com.google.gson.annotations.SerializedName;
 

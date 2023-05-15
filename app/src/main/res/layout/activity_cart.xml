@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".activity.Cart">
+    tools:context=".activity.CartActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:gravity="center_horizontal"
@@ -65,28 +65,6 @@
             android:layout_marginEnd="@dimen/_24pxh"
             android:gravity="start"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textProduct"
-                android:layout_width="67dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="208dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:layout_marginEnd="15dp"
-                android:text="Button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textProduct" />
-
             <TextView
                 android:id="@+id/txtToday"
                 style="@style/txtPoppinssemibold15"
@@ -107,7 +85,7 @@
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="2"
-                tools:listitem="@layout/row_listellipsetwenty_two" />
+                tools:listitem="@layout/row_listellipsetwenty" />
 
             <TextView
                 android:id="@+id/txtLastweek"
@@ -130,7 +108,7 @@
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="2"
-                tools:listitem="@layout/row_listellipsetwenty_two" />
+                tools:listitem="@layout/row_listellipsetwenty" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnConfirmOrder"

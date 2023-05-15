@@ -16,10 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.PaymentMedthod"
+            android:name=".activity.PaymentMedthodActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ConfirmOrder"
+            android:name=".activity.ConfirmOrderActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
@@ -40,7 +40,7 @@
             android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.Cart"
+            android:name=".activity.CartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

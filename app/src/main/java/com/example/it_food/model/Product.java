@@ -1,4 +1,4 @@
-package com.example.it_food.activity.model;
+package com.example.it_food.model;
 
 public class Product {
     private String _id;

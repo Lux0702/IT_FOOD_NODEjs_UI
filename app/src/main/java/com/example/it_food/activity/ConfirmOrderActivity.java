@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.it_food.R;
 
-public class PaymentMedthod extends AppCompatActivity {
+public class ConfirmOrderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_medthod);
+        setContentView(R.layout.activity_confirm_order);
     }
 }

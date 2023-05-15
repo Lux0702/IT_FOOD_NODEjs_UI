@@ -1,10 +1,6 @@
-package com.example.it_food.activity.api;
+package com.example.it_food.InterFace;
 
-import com.example.it_food.activity.model.User;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.util.Map;
+import com.example.it_food.model.User;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -12,7 +8,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface ApiService {
 
