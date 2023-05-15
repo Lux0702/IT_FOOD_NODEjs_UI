@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,6 +20,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".activity.PaymentMedthodActivity"
             android:exported="false" />
         <activity
@@ -41,6 +46,24 @@
             android:exported="false" />
         <activity
             android:name=".activity.CartActivity"
+=======
+            android:name=".activity.VerificationCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignInActivity"
+>>>>>>> d90c5c6871bc5e4d5ccb0dfd0c018a59bfb7a32e
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

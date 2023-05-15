@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.activity_main);
 
 }
@@ -29,4 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     */
+=======
+        setContentView(R.layout.activity_sign_up);
+    }
+>>>>>>> d90c5c6871bc5e4d5ccb0dfd0c018a59bfb7a32e
 }
