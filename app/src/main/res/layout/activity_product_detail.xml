@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data/>
+    <FrameLayout android:id="@+id/frameSalad"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <FrameLayout android:id="@+id/frameStackunsplashmaqdfc"
+            android:layout_gravity="top|start"
+            android:layout_height="@dimen/_381pxv"
+            android:layout_marginBottom="@dimen/_10pxv" android:layout_width="match_parent">
+            <ImageView android:id="@+id/imageUnsplashMaqdFC"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_381pxh"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_food}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_food"/>
+            <ImageView android:id="@+id/imageArrowleft"
+                android:layout_gravity="top|start"
+                android:layout_height="@dimen/_16pxh"
+                android:layout_marginBottom="@dimen/_16pxv"
+                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_16pxv"
+                android:layout_width="@dimen/_9pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrowleft_white_a700"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_white_a700"/>
+        </FrameLayout>
+        <LinearLayout android:id="@+id/linearColumnsalad"
+            android:layout_gravity="bottom|center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_9pxv"
+            android:layout_marginStart="@dimen/_1pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylewhite_1">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowsalad"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_50pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSalad"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2pxv"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.46"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="Food Name"
+                    style="@style/txtMontserratromanbold24" tools:text="Food Name"/>
+                <LinearLayout android:id="@+id/linearRowlocation"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_175pxh"
+                    android:layout_weight="0.54"
+                    android:layout_width="0dp" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
+                        android:id="@+id/btnLocation"
+                        android:layout_height="@dimen/_34pxh"
+                        android:layout_width="@dimen/_34pxh"
+                        android:paddingHorizontal="@dimen/_7pxh"
+                        android:paddingVertical="@dimen/_7pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_location" tools:ignore="ContentDescription"/>
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
+                        android:id="@+id/btnFavorite"
+                        android:layout_height="@dimen/_34pxh"
+                        android:layout_marginStart="@dimen/_12pxh"
+                        android:layout_width="@dimen/_34pxh"
+                        android:paddingHorizontal="@dimen/_10pxh"
+                        android:paddingVertical="@dimen/_10pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_favorite" tools:ignore="ContentDescription"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRating"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_23pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/linearRowiconstar"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_weight="0.45"
+                    android:layout_width="0dp" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imageIconStar"
+                        android:layout_height="@dimen/_16pxh"
+                        android:layout_marginBottom="@dimen/_3pxv"
+                        android:layout_width="@dimen/_16pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_iconstar"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_iconstar"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtRatingCounter"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.83"
+                        android:layout_width="0dp"
+                        android:letterSpacing="0.03"
+                        android:singleLine="true"
+                        android:text="4,8 Rating"
+                        style="@style/txtMontserratromanregular14_1" tools:text="4,8 Rating"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearRowlocationOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2pxv"
+                    android:layout_marginStart="@dimen/_98pxh"
+                    android:layout_weight="0.55"
+                    android:layout_width="0dp" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imageLocationOne"
+                        android:layout_height="@dimen/_18pxh"
+                        android:layout_marginBottom="@dimen/_1pxv"
+                        android:layout_width="@dimen/_14pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_ordered"
+                        tools:ignore="ContentDescription" tools:src="@drawable/ic_ordered"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtRating"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.87"
+                        android:layout_width="0dp"
+                        android:letterSpacing="0.03"
+                        android:singleLine="true"
+                        android:text="2000+ Orders"
+                        style="@style/txtMontserratromanregular14_1" tools:text="2000+ Orders"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:gravity="center_horizontal"
+                android:id="@+id/txtTryingtostay"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_29pxv"
+                android:layout_width="match_parent"
+                android:text="@string/msg_trying_to_stay"
+                style="@style/txtMontserratromanregular16" tools:text="@string/msg_trying_to_stay"/>
+
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowprice"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_61pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal" style="@style/groupStylecornerRadius">
+
+                <ImageButton
+                    android:id="@+id/btnDecrease"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/orange_circle"
+                    android:src="@drawable/ic_minus"
+                    android:contentDescription="-" />
+
+                <EditText
+                    android:id="@+id/etQuantity"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="viewEnd" />
+
+                <ImageButton
+                    android:id="@+id/btnIncrease"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/orange_circle"
+                    android:src="@drawable/ic_add"
+                    android:contentDescription="+" />
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    style="@style/txtPoppinsmedium18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="85dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Food Price" />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnAddToCart"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/_72pxv"
+                android:layout_marginBottom="@dimen/_41pxv"
+                android:layout_marginEnd="@dimen/_23pxh"
+                android:layout_marginStart="@dimen/_23pxh"
+                android:layout_marginTop="@dimen/_23pxv"
+                android:layout_width="@dimen/_289pxh"
+                android:paddingBottom="@dimen/_23pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_23pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_add_to_cart"
+                android:textAllCaps="false"
+                style="@style/btnSolidRounded_1" tools:text="@string/lbl_add_to_cart"/>
+        </LinearLayout>
+        <View
+            android:background="@drawable/rectangle_bg_black_900_radius_tl_2_tr_3_bl_3_br_2"
+            android:id="@+id/lineHomeIndicator"
+            android:layout_gravity="bottom|center"
+            android:layout_height="@dimen/_5pxv"
+            android:layout_marginBottom="@dimen/_8pxv"
+            android:layout_marginEnd="@dimen/_133pxh"
+            android:layout_marginStart="@dimen/_133pxh"
+            android:layout_marginTop="@dimen/_10pxv" android:layout_width="@dimen/_122pxh"/>
+    </FrameLayout>
+</layout>

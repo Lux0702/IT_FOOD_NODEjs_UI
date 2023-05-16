@@ -159,11 +159,13 @@ $0</string>
     <string name="msg_push_notificati">Push Notifications</string>
     <string name="msg_already_have_ac">Already have account?</string>
     <string name="msg_st_georgese_ter">St Georgese Terrace, Perth</string>
+    <string name="msg_trying_to_stay">Trying to stay healtly? no worries we got you covered, fresh water melon specially hand picked and ready for delivery . Order now !!</string>
     <string name="msg_easily_find_you">Easily find your type of food craving and you\u2019ll get delivery in wide range.</string>
     <string name="lbl_login_to_foodly">Login to Foodly</string>
     <string name="lbl_your_orders">Your Orders</string>
     <string name="lbl_sign_in">Sign In</string>
     <string name="lbl_subway">Subway</string>
+    <string name="lbl_add_to_cart">Add to cart</string>
     <string name="lbl_forgot_password2">Forgot password</string>
     <string name="lbl_snickerdoodle">Snickerdoodle</string>
     <string name="msg_great_food_i_li">Great food I like this place, I think best place of Colarodo. Chilling with Friends :)</string>

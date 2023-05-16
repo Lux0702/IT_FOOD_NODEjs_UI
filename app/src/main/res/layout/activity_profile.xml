@@ -182,7 +182,7 @@
                     tools:src="@drawable/ic_phone"/>
 
                 <TextView
-                    android:id="@+id/txtEmail"
+                    android:id="@+id/txtPhone"
                     style="@style/txtMontserratromanregular14_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -191,8 +191,7 @@
                     android:layout_weight="0.89"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Email"
-                    tools:text="Email" />
+                    tools:text="Phone" />
             </LinearLayout>
         </LinearLayout>
         <View
