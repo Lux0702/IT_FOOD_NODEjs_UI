@@ -20,7 +20,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".activity.PaymentMedthodActivity"
             android:exported="false" />
         <activity
@@ -42,32 +41,13 @@
             android:name=".activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.CartActivity"
-=======
-            android:name=".activity.VerificationCodeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ForgotPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
->>>>>>> d90c5c6871bc5e4d5ccb0dfd0c018a59bfb7a32e
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
