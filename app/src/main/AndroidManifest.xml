@@ -28,7 +28,7 @@
             android:name=".activity.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ConfirmOrderActivity"
@@ -61,7 +61,7 @@
             android:name=".activity.CartActivity"
             android:exported="false"/>
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.HomeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
