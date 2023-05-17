@@ -77,7 +77,7 @@ public class SignInActivity extends AppCompatActivity {
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
-                    Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+                    Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
