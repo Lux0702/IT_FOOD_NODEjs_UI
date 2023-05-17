@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,15 +45,33 @@ public class VerificationCodeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_verification_code);
         mphone=getIntent().getStringExtra("phone_Number");
+        mphone="0"+ mphone.substring(3);
         mresetPassword= getIntent().getBooleanExtra("reset_password", false);
         mVerification=getIntent().getStringExtra("verification_Id");
         init();
+        findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(VerificationCodeActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+            }
+        });
         mAuth=FirebaseAuth.getInstance();
+        FocusText();
         txtSendOTPAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                etCode1.setText("");
+                etCode2.setText("");
+                etCode3.setText("");
+                etCode4.setText("");
+                etCode5.setText("");
+                etCode6.setText("");
                 onClickSendOtpAgain();
             }
         });
@@ -182,5 +204,106 @@ public class VerificationCodeActivity extends AppCompatActivity {
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
+    private void FocusText(){
+        etCode1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Kiểm tra nếu đã nhập ký tự
+                if (s.length() > 0) {
+                    // Di chuyển trỏ tới EditText tiếp theo
+                    etCode2.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+        etCode2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Kiểm tra nếu đã nhập ký tự
+                if (s.length() > 0) {
+                    // Di chuyển trỏ tới EditText tiếp theo
+                    etCode3.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+        etCode3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Kiểm tra nếu đã nhập ký tự
+                if (s.length() > 0) {
+                    // Di chuyển trỏ tới EditText tiếp theo
+                    etCode4.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+        etCode4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Kiểm tra nếu đã nhập ký tự
+                if (s.length() > 0) {
+                    // Di chuyển trỏ tới EditText tiếp theo
+                    etCode5.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+        etCode5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Kiểm tra nếu đã nhập ký tự
+                if (s.length() > 0) {
+                    // Di chuyển trỏ tới EditText tiếp theo
+                    etCode6.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+    }
 }

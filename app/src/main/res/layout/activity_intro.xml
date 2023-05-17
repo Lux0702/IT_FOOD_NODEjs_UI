@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/constraintLayout1">
     <LinearLayout android:gravity="center_horizontal"
         android:id="@+id/linearLaunch"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:background="#4AFFE7">
+        android:background="#BFE8E3">
 
         <ImageView
             android:layout_height="match_parent"

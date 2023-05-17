@@ -1,5 +1,6 @@
 package com.example.it_food.activity;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.MainActivity;
+import com.example.it_food.activity.manager.StatisticalActivity;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
 import com.example.it_food.retrofit.ApiClient;
@@ -29,6 +33,7 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
 
     EditText etPhone, etPassword;
+    private String mpassword;
     private static final  String TAG=SignInActivity.class.getName();
     RelativeLayout signupLayout;
     private APIService apiService;
@@ -36,6 +41,8 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_sign_in);
         etPhone = findViewById(R.id.txtPhone);
         etPassword = findViewById(R.id.txtPassword);
@@ -91,7 +98,8 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User.Data userData = response.body().getData();
-
+                    User user=response.body();
+                    mpassword=etPassword.getText().toString();
                     String id = userData.getId();
                     String name = userData.getName();
                     String phone = userData.getPhoneNumber();
@@ -99,14 +107,28 @@ public class SignInActivity extends AppCompatActivity {
                     String address = userData.getAddress();
                     String gender = userData.getGender();
                     String avatar = userData.getAvatar();
-
+                    String role=userData.getRole();
                     SharedPreferences.getInstance(getApplicationContext()).userLogin(new User(id, phone, name, email, gender, avatar, address));
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
+<<<<<<< HEAD
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
+=======
+                    if(role.equalsIgnoreCase("MANAGER"))
+                    {
+                        Intent intent = new Intent(SignInActivity.this, StatisticalActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                    else{
+                        goToActivity(mpassword);
+                    }
+
+>>>>>>> 8e03d11804a052dbf3fd8f9aa5b1c303a2282ada
                 } else {
                     // Xử lý thất bại, hiển thị thông báo lỗi
                     Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
@@ -119,6 +141,13 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void goToActivity(String mpassword) {
+        Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
+        intent.putExtra("m_Password",mpassword);
+        startActivity(intent);
+        finish();
     }
 
 

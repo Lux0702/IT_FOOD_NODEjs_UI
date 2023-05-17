@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:background="#4AFFE7"
+        android:drawable="@drawable/logo_itfood"
+         />
+</layer-list>
