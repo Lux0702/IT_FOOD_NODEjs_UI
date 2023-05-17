@@ -35,16 +35,13 @@
             android:name=".activity.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ConfirmOrderActivity"
             android:exported="false" />
         <activity
             android:name=".activity.PaymentMedthodActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ProfileActivity"

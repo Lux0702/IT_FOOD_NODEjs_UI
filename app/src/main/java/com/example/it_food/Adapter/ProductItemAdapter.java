@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.CartActivity;
+import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.ProductItem;
+import com.example.it_food.model.User;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -31,9 +33,11 @@ import retrofit2.Response;
 
 public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.ProductItemViewHolder>{
     private final List<ProductItem> mListProduct;
+    private Context mContext;
 
-    public ProductItemAdapter(List<ProductItem> mListProduct) {
+    public ProductItemAdapter(List<ProductItem> mListProduct, Context mContext) {
         this.mListProduct = mListProduct;
+        this.mContext = mContext;
     }
 
     @NonNull
@@ -54,11 +58,12 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
         holder.price.setText(String.valueOf(productItem.getPrice()));
         holder.quantity.setText(String.valueOf(productItem.getQuantity()));
 
+        User user = SharedPreferences.getInstance(mContext).getUser();
         holder.plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Map<String, Object> body = new HashMap<>();
-                body.put("userId", "6454bd3cf82eec776eb7d842");
+                body.put("userId", user.getId());
                 body.put("productId", productItem.get_id());
                 body.put("quantity",productItem.getQuantity()+1);
                 APIService.apiService.updateProductInCart(body).enqueue(new Callback<ResponseBody>() {

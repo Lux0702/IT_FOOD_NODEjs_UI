@@ -17,7 +17,9 @@ import android.widget.Toast;
 import com.example.it_food.Adapter.ProductItemAdapter;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
+import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.ProductItem;
+import com.example.it_food.model.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,17 +50,23 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         confirmOrder = findViewById(R.id.btnConfirmOrder);
-
         recyclerView = findViewById(R.id.recyclerListellipsetwenty);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        if (SharedPreferences.getInstance(this).isLoggedIn()){
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(linearLayoutManager);
 
-        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(itemDecoration);
+            DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+            recyclerView.addItemDecoration(itemDecoration);
 
-        mListProduct = new ArrayList<>();
-        callApiGetProductInCart();
+            mListProduct = new ArrayList<>();
+            callApiGetProductInCart();
 
+
+        }else {
+            Intent intent = new Intent(CartActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+        }
         confirmOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +77,8 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void callApiGetProductInCart() {
-        APIService.apiService.GetProInCart("6454bd3cf82eec776eb7d842").enqueue(new Callback<ResponseBody>() {
+        User user = SharedPreferences.getInstance(this).getUser();
+        APIService.apiService.GetProInCart(user.getId()).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
@@ -89,7 +98,7 @@ public class CartActivity extends AppCompatActivity {
                             ProductItem productItem = new ProductItem(id, description, itemName, itemPrice, image, quantity);
                             mListProduct.add(productItem);
                         }
-                        ProductItemAdapter productItemAdapter = new ProductItemAdapter(mListProduct);
+                        ProductItemAdapter productItemAdapter = new ProductItemAdapter(mListProduct, CartActivity.this);
                         recyclerView.setAdapter(productItemAdapter);
                     } catch (JSONException | IOException e) {
                         e.printStackTrace();
