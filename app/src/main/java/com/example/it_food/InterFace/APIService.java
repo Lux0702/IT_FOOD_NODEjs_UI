@@ -36,6 +36,9 @@ public interface APIService {
             .build()
             .create(APIService.class);
 
+    @GET("users/phone-number")
+    Call<User> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
+
     @POST("users/login")
     Call<User> login(@Body User user);
 
@@ -53,5 +56,8 @@ public interface APIService {
             @Part("id") RequestBody id,
             @Part MultipartBody.Part image
     );
-
+    @PATCH("users/reset-password")
+    Call<Void> resetPassword(@Body User user);
+    @PATCH("users/forgot-password")
+    Call<Void> resetPasswordForgot(@Body User user);
 }

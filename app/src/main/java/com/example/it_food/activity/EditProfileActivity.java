@@ -45,6 +45,7 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         btnEditPasswd = findViewById(R.id.btnEditPasswd);
+
         if(SharedPreferences.getInstance(this).isLoggedIn()) {
             edtUserName = findViewById(R.id.edtUserName);
             edtEmail = findViewById(R.id.edtEmail);
@@ -73,7 +74,6 @@ public class EditProfileActivity extends AppCompatActivity {
                 chooseImage();
             }
         });
-
         btnEditPasswd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

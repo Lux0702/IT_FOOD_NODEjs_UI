@@ -156,8 +156,7 @@
                     android:layout_weight="0.89"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Email"
-                    tools:text="Email" />
+                    android:text="Email" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -224,7 +223,6 @@
                     android:src="@drawable/img_home"
                     tools:ignore="ContentDescription"
                     tools:src="@drawable/img_home" />
-
                 <TextView
                     android:id="@+id/txtAddress"
                     style="@style/txtMontserratromanregular14_1"
@@ -235,8 +233,7 @@
                     android:layout_weight="0.89"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Home"
-                    tools:text="Home" />
+                    android:text="Home" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -265,8 +262,6 @@
             android:textSize="24sp"
             tools:text="Log out" />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
