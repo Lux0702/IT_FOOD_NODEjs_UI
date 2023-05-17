@@ -58,6 +58,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
         holder.quantity.setText(String.valueOf(productItem.getQuantity()));
 
         User user = SharedPreferences.getInstance(mContext).getUser();
+        
         holder.plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +86,32 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
             }
         });
 
+        holder.minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Map<String, Object> body = new HashMap<>();
+                body.put("userId", user.getId());
+                body.put("productId", productItem.get_id());
+                body.put("quantity",productItem.getQuantity()-1);
+                APIService.apiService.updateProductInCart(body).enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            Log.d("", "success");
+                            productItem.setQuantity(productItem.getQuantity()-1);
+                            holder.quantity.setText(String.valueOf(productItem.getQuantity()));
+                        }else {
+                            Log.d("", "response error");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Log.d("", "error");
+                    }
+                });
+            }
+        });
     }
 
     @Override

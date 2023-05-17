@@ -66,7 +66,7 @@ public interface APIService {
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
-    @PATCH("users/forgot-password")
+    //@PATCH("users/forgot-password")
 
     @GET("categories")
     Call<ResponseBody> getCategories();

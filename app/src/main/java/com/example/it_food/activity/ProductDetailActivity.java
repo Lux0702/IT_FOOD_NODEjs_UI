@@ -57,8 +57,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         txtFoodPrice = findViewById(R.id.txtFoodPrice);
         edtQuantity = findViewById(R.id.edtQuantity);
         btnFavorite = findViewById(R.id.btnFavorite);
-        btnDecrease = findViewById(R.id.btnIncrease);
-        btnIncrease = findViewById(R.id.btnDecrease);
+        btnDecrease = findViewById(R.id.btnDecrease);
+        btnIncrease = findViewById(R.id.btnIncrease);
         btnAddToCart = findViewById(R.id.btnAddToCart);
         mContext = this;
         user = SharedPreferences.getInstance(this).getUser();
