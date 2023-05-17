@@ -21,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         viewPager = findViewById(R.id.viewPager);
+
         bannerAdapter = new BannerAdapter(this);
         viewPager.setAdapter(bannerAdapter);
         bannerAdapter.startAutoScroll(3000);

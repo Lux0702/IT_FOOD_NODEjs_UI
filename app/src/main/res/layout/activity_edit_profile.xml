@@ -58,17 +58,11 @@
                     android:layout_height="match_parent"
                     android:id="@+id/avatarFrame">
                     <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/imageProfile"
+                        android:id="@+id/imgProfileEdit"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:background="@drawable/rounded_layout"
                         android:scaleType="centerCrop"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.046"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.107"
                         app:riv_oval="true"
                         tools:src="@tools:sample/avatars" />
 
@@ -125,7 +119,7 @@
                             android:text="Phone" />
 
                         <EditText
-                            android:id="@+id/etPhoneSignUp"
+                            android:id="@+id/edtPhone"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
@@ -242,7 +236,7 @@
                             android:text="Email" />
 
                         <EditText
-                            android:id="@+id/etEmailSignUP"
+                            android:id="@+id/edtEmail"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
@@ -283,7 +277,7 @@
                             android:text="Name" />
 
                         <EditText
-                            android:id="@+id/etYourName"
+                            android:id="@+id/edtUserName"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
@@ -324,7 +318,7 @@
                             android:text="Gender" />
 
                         <EditText
-                            android:id="@+id/etGender"
+                            android:id="@+id/edtGender"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"

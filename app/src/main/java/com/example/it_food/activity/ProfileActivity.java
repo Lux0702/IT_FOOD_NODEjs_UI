@@ -16,7 +16,7 @@ import com.example.it_food.model.User;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView txtId, txtUserName, txtEmail, txtPhone, txtAddress;
-    TextView txtLogout;
+    TextView txtLogout, txtEdit;
     ImageView imgProfile, imgGender;
 
     String profileImage;
@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
             txtEmail = findViewById(R.id.txtEmail);
             txtPhone = findViewById(R.id.txtPhone);
             txtLogout = findViewById(R.id.txtLogout);
+            txtEdit = findViewById(R.id.txtEdit);
             txtAddress = findViewById(R.id.txtAddress);
             imgGender = findViewById(R.id.imgGender);
             imgProfile = findViewById(R.id.imgProfile);
@@ -45,6 +46,13 @@ public class ProfileActivity extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfile);
 
             txtLogout.setOnClickListener(this::onClick);
+            txtEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                    startActivity(intent);
+                }
+            });
 
         } else {
             Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);

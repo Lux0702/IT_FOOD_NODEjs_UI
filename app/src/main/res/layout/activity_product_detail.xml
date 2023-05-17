@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ProductDetailActivity">
     <FrameLayout android:id="@+id/frameSalad"
         android:layout_height="match_parent"
         android:layout_width="match_parent" style="@style/groupStylewhite_A700">
@@ -13,7 +16,6 @@
                 android:layout_height="@dimen/_381pxh"
                 android:layout_width="match_parent"
                 android:scaleType="fitXY"
-                imageRes="@{@drawable/img_food}"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_food"/>
             <ImageView android:id="@+id/imageArrowleft"
                 android:layout_gravity="top|start"
@@ -46,7 +48,7 @@
                     android:id="@+id/txtSalad"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_2pxv"
-                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
                     android:layout_weight="0.46"
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="Food Name"
@@ -56,25 +58,19 @@
                     android:layout_marginStart="@dimen/_175pxh"
                     android:layout_weight="0.54"
                     android:layout_width="0dp" android:orientation="horizontal">
+
                     <ImageButton
-                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
-                        android:id="@+id/btnLocation"
-                        android:layout_height="@dimen/_34pxh"
-                        android:layout_width="@dimen/_34pxh"
-                        android:paddingHorizontal="@dimen/_7pxh"
-                        android:paddingVertical="@dimen/_7pxv"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_location" tools:ignore="ContentDescription"/>
-                    <ImageButton
-                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
                         android:id="@+id/btnFavorite"
-                        android:layout_height="@dimen/_34pxh"
-                        android:layout_marginStart="@dimen/_12pxh"
-                        android:layout_width="@dimen/_34pxh"
+                        android:layout_width="@dimen/_48pxh"
+                        android:layout_height="@dimen/_48pxh"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
+                        android:contentDescription="Favorite"
                         android:paddingHorizontal="@dimen/_10pxh"
                         android:paddingVertical="@dimen/_10pxv"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/img_favorite" tools:ignore="ContentDescription"/>
+                        android:src="@drawable/img_favorite"
+                        tools:ignore="ContentDescription" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout android:gravity="start"
@@ -155,8 +151,8 @@
 
                 <ImageButton
                     android:id="@+id/btnDecrease"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/orange_circle"
                     android:src="@drawable/ic_minus"
@@ -165,15 +161,16 @@
                 <EditText
                     android:id="@+id/etQuantity"
                     android:layout_width="65dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:inputType="number"
+                    android:paddingTop="23dp"
                     android:text="0"
                     android:textAlignment="viewEnd" />
 
                 <ImageButton
                     android:id="@+id/btnIncrease"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/orange_circle"
                     android:src="@drawable/ic_add"
@@ -210,14 +207,5 @@
                 android:textAllCaps="false"
                 style="@style/btnSolidRounded_1" tools:text="@string/lbl_add_to_cart"/>
         </LinearLayout>
-        <View
-            android:background="@drawable/rectangle_bg_black_900_radius_tl_2_tr_3_bl_3_br_2"
-            android:id="@+id/lineHomeIndicator"
-            android:layout_gravity="bottom|center"
-            android:layout_height="@dimen/_5pxv"
-            android:layout_marginBottom="@dimen/_8pxv"
-            android:layout_marginEnd="@dimen/_133pxh"
-            android:layout_marginStart="@dimen/_133pxh"
-            android:layout_marginTop="@dimen/_10pxv" android:layout_width="@dimen/_122pxh"/>
     </FrameLayout>
-</layout>
+</LinearLayout>

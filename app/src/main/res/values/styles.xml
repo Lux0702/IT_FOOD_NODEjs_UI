@@ -73,7 +73,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">500</item>
     </style>
     <style name="txtMontserratromanregular14_1">
-        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
@@ -405,7 +405,7 @@
         <item name="android:background">@drawable/rectangle_bg_red_a400_radius_23_88</item>
     </style>
     <style name="btnSolidRounded_8">
-        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/white_A700</item>
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textFontWeight" tools:targetApi="p">600</item>
