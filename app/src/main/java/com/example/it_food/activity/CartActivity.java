@@ -40,8 +40,6 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<ProductItem> mListProduct;
     private AppCompatButton confirmOrder;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +106,6 @@ public class CartActivity extends AppCompatActivity {
                     Toast.makeText(CartActivity.this, "response not success", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(@NonNull Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(CartActivity.this, "Call api error", Toast.LENGTH_SHORT).show();

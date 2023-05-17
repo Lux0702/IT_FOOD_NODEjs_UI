@@ -49,7 +49,7 @@ EditText etName,etPhone,etPassword,etAddress, etEmail,etGender;
     }
     private void userRegister(){
         final String username = etName.getText().toString();
-        final String password = etPassword.getText().toString();
+        final String password = etPassword.getText().toString().trim();
         final String phone = etPhone.getText().toString();
         final String email = etEmail.getText().toString();
         final String address = etAddress.getText().toString();
@@ -96,7 +96,7 @@ EditText etName,etPhone,etPassword,etAddress, etEmail,etGender;
             etGender.requestFocus();
             return;
         }
-        String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";
+        String passwordPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$";
         if (TextUtils.isEmpty(password)) {
             etPassword.setError("Please enter your password");
             etPassword.requestFocus();

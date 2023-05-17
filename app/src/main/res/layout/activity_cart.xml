@@ -203,7 +203,7 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:backgroundTint="@color/white_A700"
-                android:id="@+id/floatingBtnFloatingactionbutton"
+                android:id="@+id/btnCart1"
                 android:layout_gravity="top|center"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10pxv"

@@ -69,6 +69,8 @@ public class ProfileActivity extends AppCompatActivity {
     public void onClick(View view) {
         if (view.equals(txtLogout)) {
             SharedPreferences.getInstance(getApplicationContext()).logout();
+            Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);
+            startActivity(intent);
         }
     }
 }
