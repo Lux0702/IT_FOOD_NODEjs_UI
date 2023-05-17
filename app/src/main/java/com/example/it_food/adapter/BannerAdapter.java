@@ -1,4 +1,4 @@
-package com.example.it_food.adapter;
+package com.example.it_food.Adapter;
 
 import android.content.Context;
 import android.os.Handler;
