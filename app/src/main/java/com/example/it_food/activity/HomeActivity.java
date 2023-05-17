@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.it_food.R;
-import com.example.it_food.adapter.BannerAdapter;
+import com.example.it_food.Adapter.BannerAdapter;
 
 import java.util.Timer;
 import java.util.TimerTask;
