@@ -30,7 +30,7 @@ public interface APIService {
             .build()
             .create(APIService.class);
 
-    @GET("users/{phoneNumber}")
+    @GET("users/phone-number")
     Call<User> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
 
     @POST("users/login")
@@ -41,4 +41,6 @@ public interface APIService {
 
     @PATCH("users/reset-password")
     Call<Void> resetPassword(@Body User user);
+    @PATCH("users/forgot-password")
+    Call<Void> resetPasswordForgot(@Body User user);
 }

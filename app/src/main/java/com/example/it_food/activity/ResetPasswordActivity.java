@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.model.User;
 
@@ -22,7 +23,7 @@ import retrofit2.Response;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 
-    private  String  mphoneNumber,newPass,confirmPass;
+    private  String  mphoneNumber,newPass,confirmPass,name,email;
     EditText etNewPassword,etConfirmPassword;
     private static final  String TAG=ResetPasswordActivity.class.getName();
 
@@ -48,9 +49,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     return;
                 }
                 String password = etNewPassword.getText().toString();
-                String confirmPassword = etConfirmPassword.getText().toString();
+                confirmPass = etConfirmPassword.getText().toString();
 
-                if (password.equals(confirmPassword)) {
+                if (password.equals(confirmPass)) {
                     // Hai trường password và confirm password giống nhau
                     // Thực hiện các hành động tiếp theo
                     ResetPassword(mphoneNumber);
@@ -69,14 +70,15 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     }
     private void getDataUser(String phoneNumber){
-        Call<User> getUserCall = apiService.getUserByPhoneNumber(phoneNumber);
-        getUserCall.enqueue(new Callback<User>() {
+        Call<User> getUser = apiService.getUserByPhoneNumber(phoneNumber);
+        getUser.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User user = response.body();
-                    String name = user.getName();
-                    String email = user.getEmail();
+                     name = user.getName();
+                     email = user.getEmail();
+
 
                     Log.e(TAG, "name:"+name);
                     // Tiếp tục xử lý sau khi nhận được thông tin người dùng
@@ -96,6 +98,23 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
     private void ResetPassword(String phone){
             getDataUser(phone);
+        User user = new User();
+        user.setName(name);
+        user.setPassword(confirmPass);
+        user.setPhoneNumber(mphoneNumber);
+        user.setEmail(email);
+        APIService.apiService.resetPasswordForgot(user).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+
+            }
+        });
+
     }
     private void init(){
         etConfirmPassword=findViewById(R.id.etConfirmPasswor);

@@ -17,7 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IT_FOOD"
         android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.FinishResetActivity"
             android:exported="false" />
@@ -28,7 +38,7 @@
             android:name=".activity.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
@@ -37,7 +47,7 @@
             android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ForgotPasswordActivity"
+            android:name=".activity.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

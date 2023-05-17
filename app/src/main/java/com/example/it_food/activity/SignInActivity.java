@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.MainActivity;
+import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
 import com.example.it_food.retrofit.ApiClient;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +29,7 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
 
     EditText etPhone, etPassword;
-
+    private static final  String TAG=SignInActivity.class.getName();
     RelativeLayout signupLayout;
     private APIService apiService;
 
@@ -88,12 +90,21 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
-                    User user = response.body();
+                    User.Data userData = response.body().getData();
 
+                    String id = userData.getId();
+                    String name = userData.getName();
+                    String phone = userData.getPhoneNumber();
+                    String email = userData.getEmail();
+                    String address = userData.getAddress();
+                    String gender = userData.getGender();
+                    String avatar = userData.getAvatar();
+
+                    SharedPreferences.getInstance(getApplicationContext()).userLogin(new User(id, phone, name, email, gender, avatar, address));
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
-                    Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+                    Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
