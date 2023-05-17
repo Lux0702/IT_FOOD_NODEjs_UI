@@ -13,7 +13,6 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
-<<<<<<< HEAD
         android:icon="@drawable/ic_launcher"
         android:label="IT.FOOD"
         android:supportsRtl="true"
@@ -25,16 +24,11 @@
             android:exported="false" />
         <activity
             android:name=".activity.manager.UploadProductActivity"
-=======
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.IT_FOOD"
-        android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+            android:exported="false" />
+
         <activity
             android:name=".activity.ShowProductActivity"
->>>>>>> 18d4f0cefe181fd9b0837cbf24142a9bdf77c91b
+
             android:exported="false" />
         <activity
             android:name=".activity.manager.StatisticalActivity"
