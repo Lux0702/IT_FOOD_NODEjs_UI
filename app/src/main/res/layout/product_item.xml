@@ -1,25 +1,35 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="130dp"
     android:layout_height="wrap_content"
-    android:id="@+id/categoryLayout"
+    android:id="@+id/productItemLayout"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/categoryImg"
+        android:id="@+id/productImg"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:src="@drawable/img_food"
-        android:background="@drawable/item_background"
         android:scaleType="centerCrop"
         android:padding="2dp" />
 
     <TextView
-        android:id="@+id/categoryName"
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:layout_below="@id/productImg"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:minLines="2"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/productPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Category Name"
-        android:layout_below="@id/categoryImg"
+        android:text="Product Price"
+        android:layout_below="@id/productName"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

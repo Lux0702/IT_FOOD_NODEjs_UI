@@ -23,8 +23,9 @@ public class BannerAdapter extends PagerAdapter {
     private List<Integer> listImg;
     private ViewPager viewPager;
 
-    public BannerAdapter(Context context) {
+    public BannerAdapter(Context context, ViewPager viewPager) {
         this.context = context;
+        this.viewPager = viewPager;
         listImg = new ArrayList<>();
         listImg.add(R.drawable.img_food_1);
         listImg.add(R.drawable.img_food_2);

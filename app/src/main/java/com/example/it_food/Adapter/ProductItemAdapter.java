@@ -30,7 +30,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.ProductItemViewHolder>{
     private final List<ProductItem> mListProduct;
     private Context mContext;
@@ -95,6 +94,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
         }
         return 0;
     }
+
 
     public class ProductItemViewHolder extends RecyclerView.ViewHolder{
 

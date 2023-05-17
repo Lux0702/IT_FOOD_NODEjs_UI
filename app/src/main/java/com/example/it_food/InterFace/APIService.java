@@ -1,14 +1,14 @@
 package com.example.it_food.InterFace;
 
+import com.example.it_food.model.Category;
 import com.example.it_food.model.GetUserResponse;
 import com.example.it_food.model.Result;
 import com.example.it_food.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
 import java.util.Map;
-
-
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -64,6 +64,13 @@ public interface APIService {
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
     @PATCH("users/forgot-password")
+
+    @GET("categories")
+    Call<ResponseBody> getCategories();
+    @GET("products/best-seller")
+    Call<ResponseBody> getBestSellerProducts();
+    @GET("products")
+    Call<ResponseBody> getProductList(@Query("categoryId") String id);
     Call<User> resetPasswordForgot(@Body User user);
     @GET("orders/total-orders-day")
     Call<Result> getTotalOrdersDay(@Query("userId") String userId);

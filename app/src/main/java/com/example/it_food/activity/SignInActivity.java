@@ -104,6 +104,7 @@ public class SignInActivity extends AppCompatActivity {
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
+
                     if(role.equalsIgnoreCase("MANAGER"))
                     {
                         Intent intent = new Intent(SignInActivity.this, DashBoardActivity.class);
