@@ -28,7 +28,6 @@
 
         <activity
             android:name=".activity.ShowProductActivity"
-
             android:exported="false" />
         <activity
             android:name=".activity.manager.StatisticalActivity"
@@ -77,6 +76,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

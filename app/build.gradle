@@ -7,7 +7,7 @@ android {
     signingConfigs {
 
         debug {
-            storeFile file('D:\\University\\3year\\HK2\\LTDD\\final\\IT_FOOD_NODEjs_UI\\key\\debug.keystore')
+            storeFile file('D:\\ITFOOD\\IT_FOOD_NODEjs_UI\\key\\debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'

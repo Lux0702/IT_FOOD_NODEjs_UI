@@ -115,13 +115,11 @@ public class SignInActivity extends AppCompatActivity {
                     else{
                         goToActivity(mpassword);
                     }
-
                 } else {
                     // Xử lý thất bại, hiển thị thông báo lỗi
                     Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(SignInActivity.this, "Login Fail", Toast.LENGTH_SHORT).show();
@@ -131,8 +129,8 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void goToActivity(String mpassword) {
-        Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
-        intent.putExtra("m_Password",mpassword);
+        Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+        //intent.putExtra("m_Password",mpassword);
         startActivity(intent);
         finish();
     }

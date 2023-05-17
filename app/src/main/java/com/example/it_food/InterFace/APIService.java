@@ -83,5 +83,6 @@ public interface APIService {
 
     @GET("orders/total-prices-day-series")
     Call<Result> getTotalPricesDaySeries(@Query("userId") String userId,  @Query("startDay") String startDay, @Query("endDay") String endDay);
-
+    @POST("cart-items/add")
+    Call<ResponseBody> addToCart(@Body Map<String, Object> body);
 }
