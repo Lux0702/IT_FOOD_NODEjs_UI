@@ -1,5 +1,6 @@
 package com.example.it_food.InterFace;
 
+import com.example.it_food.R;
 import com.example.it_food.model.Category;
 import com.example.it_food.model.GetUserResponse;
 import com.example.it_food.model.Result;
@@ -17,6 +18,7 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -26,6 +28,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 public interface APIService {
 
@@ -85,4 +88,13 @@ public interface APIService {
     Call<Result> getTotalPricesDaySeries(@Query("userId") String userId,  @Query("startDay") String startDay, @Query("endDay") String endDay);
     @POST("cart-items/add")
     Call<ResponseBody> addToCart(@Body Map<String, Object> body);
+    @POST("users/add-address")
+    Call<ResponseBody> addAddress(@Body Map<String, Object> body);
+
+
+    @GET("users/address")
+    Call<ResponseBody> getAddress(@Query("userId") String id);
+
+    @DELETE("cart-items/delete")
+    Call<ResponseBody> deleteCart(@QueryMap Map<String, Object> body);
 }
