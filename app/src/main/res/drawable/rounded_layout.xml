@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
-    <solid android:color="@color/purple_200"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Hiệu ứng đổ bóng -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="8dp"
+                android:left="8dp"
+                android:right="8dp"
+                android:top="8dp" />
+            <stroke
+                android:color="@color/black"
+                android:width="2dp" />
+            <size android:width="70dp" android:height="70dp" />
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="4dp"
+                android:left="4dp"
+                android:right="4dp"
+                android:top="4dp" />
+            <stroke
+                android:color="@color/black"
+                android:width="2dp" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <size android:width="70dp" android:height="70dp" />
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="4dp"
+                android:left="4dp"
+                android:right="4dp"
+                android:top="4dp" />
+            <stroke
+                android:color="@color/black"
+                android:width="2dp" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <size android:width="70dp" android:height="70dp" />
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="4dp"
+                android:left="4dp"
+                android:right="4dp"
+                android:top="4dp" />
+            <stroke
+                android:color="@color/black"
+                android:width="0.5dp" />
+            <corners android:radius="50dp" />
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+        </shape>
+    </item>
+    <!-- Hình tròn -->
+    <item
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>

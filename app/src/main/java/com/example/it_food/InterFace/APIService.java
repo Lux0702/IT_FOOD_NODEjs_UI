@@ -1,5 +1,6 @@
 package com.example.it_food.InterFace;
 
+import com.example.it_food.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

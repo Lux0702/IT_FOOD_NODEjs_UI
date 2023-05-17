@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/imageProfile"
+                android:id="@+id/imgProfile"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="20dp"
@@ -98,9 +98,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp">
                     <TextView android:ellipsize="end"
-                        android:id="@+id/txtCamilaWilson"
+                        android:id="@+id/txtUsername"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:layout_marginStart="10dp"
                         android:letterSpacing="0.08"
                         android:singleLine="true"
                         android:text="Username"
@@ -108,14 +109,13 @@
                         style="@style/txtPoppinsmedium16_2" tools:text="Username"/>
 
                     <ImageView
-                        android:id="@+id/img_gender"
+                        android:id="@+id/imgGender"
                         android:layout_marginStart="15dp"
                         android:layout_height="25dp"
                         android:layout_width="25dp"
                         android:scaleType="fitXY"
                         tools:ignore="ContentDescription" tools:src="@drawable/ic_male"/>
                 </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
         <View
@@ -221,7 +221,7 @@
                     android:src="@drawable/img_home"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_home"/>
                 <TextView android:ellipsize="end"
-                    android:id="@+id/txtHome"
+                    android:id="@+id/txtAddress"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20pxh"
                     android:layout_marginTop="@dimen/_1pxv"
