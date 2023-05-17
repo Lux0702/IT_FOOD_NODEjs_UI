@@ -2,111 +2,111 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearRowellipsetwentyTwo"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="horizontal" style="@style/groupStylecornerRadius_6">
-    <ImageView android:id="@+id/imageProduct"
-        android:layout_height="@dimen/_70pxh"
-        android:layout_width="@dimen/_70pxh"
-        android:scaleType="centerCrop"
-        tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse20_60x60"/>
-    <LinearLayout android:gravity="start"
-        android:id="@+id/linearColumnwatermelon"
+    android:paddingTop="@dimen/_10pxh"
+    android:paddingBottom="@dimen/_10pxh"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearRowellipsetwentyTwo"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_5pxv"
-        android:layout_marginEnd="@dimen/_8pxh"
-        android:layout_marginStart="@dimen/_35pxh"
-        android:layout_marginTop="@dimen/_4pxv"
-        android:layout_weight="0.8" android:layout_width="0dp" android:orientation="vertical">
-        <LinearLayout android:id="@+id/linearRowwatermelon"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylecornerRadius_6">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageProduct"
+            android:layout_height="@dimen/_70pxh"
+            android:layout_width="@dimen/_70pxh"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse20_60x60"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnwatermelon"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_1pxh"
-            android:layout_width="match_parent" android:orientation="horizontal">
-            <TextView android:ellipsize="end"
-                android:id="@+id/txtNameProduct"
+            android:layout_marginBottom="@dimen/_5pxv"
+            android:layout_marginEnd="@dimen/_8pxh"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_4pxv"
+            android:layout_weight="0.8" android:layout_width="0dp" android:orientation="vertical">
+            <LinearLayout android:id="@+id/linearRowwatermelon"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_3pxv"
-                android:layout_weight="0.7"
-                android:layout_width="0dp" android:singleLine="true"
-                android:text="Water melon"
-                style="@style/txtMontserratromansemibold16" tools:text="Water melon"/>
-            <TextView android:ellipsize="end"
-                android:id="@+id/txtTime"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_8pxv"
-                android:layout_marginStart="@dimen/_20pxh"
-                android:layout_weight="0.3"
-                android:layout_width="0dp" android:singleLine="true"
-                android:text="4:00 pm"
-                style="@style/txtMontserratromanregular12" tools:text="4:00 pm"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/linearAMountSetting"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_1pxv"
-            android:layout_width="match_parent" android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtPrice"
-                style="@style/txtMontserratromanmedium14_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_6pxv"
-                android:layout_weight="0.27"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="$30"
-                tools:text="$30" />
-            <LinearLayout android:id="@+id/linearRowpath"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_4pxv"
-                android:layout_marginStart="@dimen/_143pxh"
-                android:layout_weight="3"
-                android:layout_width="0dp" android:orientation="horizontal">
-                <LinearLayout android:gravity="center_horizontal"
-                    android:id="@+id/linearIconMinus"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_width="19dp"
-                    android:orientation="vertical" style="@style/groupStylered_A400_63cornerRadius">
-                    <View android:background="@color/red_A400"
-                        android:id="@+id/viewPathTwo"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_height="@dimen/_1pxv"
-                        android:layout_marginBottom="@dimen/_9pxv"
-                        android:layout_marginEnd="@dimen/_5pxh"
-                        android:layout_marginStart="@dimen/_6pxh"
-                        android:layout_marginTop="@dimen/_9pxv" android:layout_width="@dimen/_7pxh"/>
-                </LinearLayout>
+                android:layout_marginEnd="@dimen/_1pxh"
+                android:layout_width="match_parent" android:orientation="horizontal">
                 <TextView android:ellipsize="end"
-                    android:id="@+id/txtAmountTwo"
+                    android:id="@+id/txtNameProduct"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_12pxh"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:letterSpacing="0.03"
-                    android:singleLine="true"
-                    android:text="@string/lbl_1"
-                    style="@style/txtPoppinsmedium16_1" tools:text="@string/lbl_1"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:background="@drawable/rectangle_bg_red_a400_radius_8"
-                        android:id="@+id/btnGridTwo"
-                        android:layout_height="@dimen/_20pxh"
-                        android:layout_marginStart="@dimen/_13pxh"
-                        android:layout_width="@dimen/_19pxh"
-                        android:paddingHorizontal="@dimen/_5pxh"
-                        android:paddingVertical="@dimen/_5pxv"
-                        android:layout_weight="1"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_grid" tools:ignore="ContentDescription"/>
-                </LinearLayout>
+                    android:layout_marginTop="@dimen/_3pxv"
+                    android:layout_weight="0.7"
+                    android:layout_width="wrap_content" android:singleLine="true"
+                    android:text="Water melon"
+                    style="@style/txtMontserratromansemibold16" tools:text="Water melon"/>
 
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearAMountSetting"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    style="@style/txtMontserratromanmedium14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6pxv"
+                    android:layout_weight="0.27"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="$30"
+                    tools:text="$30" />
+                <LinearLayout android:id="@+id/linearRowpath"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6pxv"
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    android:weightSum="4"
+                    android:layout_width="@dimen/_150pxh"
+                    android:orientation="horizontal">
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linearIconMinus"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="19dp"
+                        android:orientation="vertical" style="@style/groupStylered_A400_63cornerRadius">
+                        <View android:background="@color/red_A400"
+                            android:id="@+id/viewPathTwo"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_9pxv"
+                            android:layout_marginEnd="@dimen/_5pxh"
+                            android:layout_marginStart="@dimen/_6pxh"
+                            android:layout_marginTop="@dimen/_9pxv" android:layout_width="@dimen/_7pxh"/>
+                    </LinearLayout>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAmountTwo"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12pxh"
+                        android:gravity="center"
+                        android:layout_weight="2"
+                        android:layout_width="20dp"
+                        android:singleLine="true"
+                        android:text="@string/lbl_1"
+                        style="@style/txtPoppinsmedium16_1" tools:text="@string/lbl_1"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:background="@drawable/rectangle_bg_red_a400_radius_8"
+                            android:id="@+id/btnGridTwo"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_marginStart="@dimen/_13pxh"
+                            android:layout_width="@dimen/_19pxh"
+                            android:paddingHorizontal="@dimen/_5pxh"
+                            android:paddingVertical="@dimen/_5pxv"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_grid" tools:ignore="ContentDescription"/>
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
-

@@ -1,6 +1,6 @@
 package com.example.it_food.model;
 
-public class Product {
+public class ProductItem {
     private String _id;
     private String name;
     private String description;
@@ -8,8 +8,14 @@ public class Product {
     private String image;
     private Integer quantity;
 
+    public ProductItem(String name, Double price, String image, Integer quantity) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.quantity = quantity;
+    }
 
-    public Product(String _id, String name, String description, Double price, String image, Integer quantity) {
+    public ProductItem(String _id, String name, String description, Double price, String image, Integer quantity) {
         this._id = _id;
         this.name = name;
         this.description = description;

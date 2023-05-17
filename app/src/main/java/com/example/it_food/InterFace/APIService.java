@@ -4,6 +4,8 @@ import com.example.it_food.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.Map;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -11,7 +13,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface APIService {
 
@@ -31,4 +36,10 @@ public interface APIService {
 
     @POST("users/register")
     Call<User> register(@Body User user);
+
+    @GET("cart-items")
+    Call<ResponseBody> GetProInCart(@Query("userId") String id);
+
+    @PATCH("cart-items/update")
+    Call<ResponseBody> updateProductInCart(@Body Map<String, Object> body);
 }
