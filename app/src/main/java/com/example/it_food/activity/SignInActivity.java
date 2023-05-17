@@ -112,11 +112,7 @@ public class SignInActivity extends AppCompatActivity {
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
-<<<<<<< HEAD
-                    Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-=======
+
                     if(role.equalsIgnoreCase("MANAGER"))
                     {
                         Intent intent = new Intent(SignInActivity.this, StatisticalActivity.class);
@@ -128,7 +124,6 @@ public class SignInActivity extends AppCompatActivity {
                         goToActivity(mpassword);
                     }
 
->>>>>>> 8e03d11804a052dbf3fd8f9aa5b1c303a2282ada
                 } else {
                     // Xử lý thất bại, hiển thị thông báo lỗi
                     Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();

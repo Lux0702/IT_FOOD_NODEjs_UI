@@ -8,17 +8,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-=======
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
->>>>>>> 8e03d11804a052dbf3fd8f9aa5b1c303a2282ada
 
 import com.example.it_food.Adapter.BestSellerAdapter;
 import com.example.it_food.Adapter.CategoryAdapter;
@@ -52,12 +49,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-=======
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
->>>>>>> 8e03d11804a052dbf3fd8f9aa5b1c303a2282ada
         setContentView(R.layout.activity_home);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
