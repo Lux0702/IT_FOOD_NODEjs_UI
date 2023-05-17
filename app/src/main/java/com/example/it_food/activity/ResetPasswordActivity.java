@@ -49,6 +49,14 @@ public class ResetPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reset_password);
         mphoneNumber=getIntent().getStringExtra("phone_Number");
         init();
+        findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResetPasswordActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+            }
+        });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

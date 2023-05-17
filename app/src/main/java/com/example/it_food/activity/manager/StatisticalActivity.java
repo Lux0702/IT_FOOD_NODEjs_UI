@@ -3,6 +3,7 @@ package com.example.it_food.activity.manager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
+import com.example.it_food.activity.ForgotPasswordActivity;
+import com.example.it_food.activity.HomeActivity;
+import com.example.it_food.activity.VerificationCodeActivity;
 import com.example.it_food.helper.DateValidator;
 import com.example.it_food.model.Result;
 
@@ -41,6 +45,14 @@ public class StatisticalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_statistical);
 
         AnhXa();
+        findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StatisticalActivity.this, HomeActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+            }
+        });
 
         APIService.apiService.getTotalOrdersDay("6463b70d1b4d877e52f22b94").enqueue(new Callback<Result>() {
             @Override
