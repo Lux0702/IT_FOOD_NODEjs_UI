@@ -18,6 +18,7 @@ import com.example.it_food.R;
 import com.example.it_food.activity.MainActivity;
 import com.example.it_food.model.User;
 import com.example.it_food.retrofit.ApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,6 +27,7 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
 
     EditText etPhone, etPassword;
+
     RelativeLayout signupLayout;
     private APIService apiService;
 
@@ -35,6 +37,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
         etPhone = findViewById(R.id.txtPhone);
         etPassword = findViewById(R.id.txtPassword);
+
         findViewById(R.id.txtSignUp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +52,18 @@ public class SignInActivity extends AppCompatActivity {
                 userLogin();
             }
         });
+        findViewById(R.id.txtForgotpassword).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResetPassword();
+            }
+        });
+    }
+
+    private void ResetPassword() {
+        Intent intent = new Intent(SignInActivity.this, ForgotPasswordActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void userLogin() {
@@ -74,6 +89,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User user = response.body();
+
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công

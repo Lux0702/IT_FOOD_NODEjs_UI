@@ -11,7 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface APIService {
 
@@ -26,9 +30,15 @@ public interface APIService {
             .build()
             .create(APIService.class);
 
+    @GET("users/{phoneNumber}")
+    Call<User> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
+
     @POST("users/login")
     Call<User> login(@Body User user);
 
     @POST("users/register")
     Call<User> register(@Body User user);
+
+    @PATCH("users/reset-password")
+    Call<Void> resetPassword(@Body User user);
 }
