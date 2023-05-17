@@ -1,30 +1,22 @@
 package com.example.it_food.activity;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
-import com.example.it_food.activity.MainActivity;
-import com.example.it_food.activity.manager.StatisticalActivity;
+import com.example.it_food.activity.manager.DashBoardActivity;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
-import com.example.it_food.retrofit.ApiClient;
-import com.google.firebase.auth.FirebaseAuth;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -114,7 +106,7 @@ public class SignInActivity extends AppCompatActivity {
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
                     if(role.equalsIgnoreCase("MANAGER"))
                     {
-                        Intent intent = new Intent(SignInActivity.this, StatisticalActivity.class);
+                        Intent intent = new Intent(SignInActivity.this, DashBoardActivity.class);
                         startActivity(intent);
                         finish();
 

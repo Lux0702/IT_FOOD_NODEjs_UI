@@ -4,52 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DashBoardActivity">
+    tools:context=".activity.manager.DashBoardActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textViewWelcome"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="-262dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome, Admin"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
+            android:orientation="horizontal"
+            android:id="@+id/linearWellcome"
+            >
+            <ImageView
+                android:id="@+id/imageMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu"
+                android:layout_marginTop="20dp"
+                android:paddingStart="10dp"
+
+                />
+            <TextView
+                android:id="@+id/textViewWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingStart="15dp"
+                android:text="Welcome, Admin"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearName"
+            android:layout_below="@id/linearWellcome">
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearDashboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewWelcome"
-            android:orientation="vertical"
-            android:layout_marginTop="16dp">
-
-            <Button
-                android:id="@+id/buttonManageUsers"
+            android:layout_below="@id/linearName"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Manage Users"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_below="@id/linearWellcome"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonManageProducts"
+                <ImageButton
+                    android:id="@+id/imageOrder"
+                    android:layout_width="100dp"
+                    android:src="@drawable/order"
+                    android:scaleType="centerCrop"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rectangle_bg_black_900_3f_radius_20" />
+
+                <ImageButton
+                    android:id="@+id/imagebtnAnalytics"
+                    android:src="@drawable/analytic_icon"
+                    android:scaleType="centerCrop"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/rectangle_bg_black_900_3f_radius_20"/>
+
+                <ImageButton
+                android:id="@+id/imageProduct"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/product"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp" android:background="@drawable/rectangle_bg_black_900_3f_radius_20"    />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Manage Products"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_below="@id/linearWellcome"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/imageCustomer"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/customer"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/rectangle_bg_black_900_3f_radius_20"/>
+                <ImageButton
+                    android:id="@+id/imageSales"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/sales"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/rectangle_bg_black_900_3f_radius_20"/>
+                <ImageButton
+                    android:id="@+id/imageTasks"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/confirm"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/rectangle_bg_black_900_3f_radius_20"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:layout_marginTop="250dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                style="@style/Theme.AppCompat.DayNight"
+                />
 
-            <!-- Thêm các chức năng dashboard khác -->
+
 
         </LinearLayout>
+
+
+
 
     </RelativeLayout>
 

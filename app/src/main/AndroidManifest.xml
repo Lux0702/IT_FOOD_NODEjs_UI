@@ -14,16 +14,22 @@
         android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_launcher"
+        android:label="IT.FOOD"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoTitle"
-        android:label="IT.FOOD"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.manager.EditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.manager.UploadProductActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.manager.StatisticalActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DashBoardActivity"
+            android:name=".activity.manager.DashBoardActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ChangePasswordActivity"
