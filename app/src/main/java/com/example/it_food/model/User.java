@@ -102,7 +102,29 @@ public class User implements Serializable {
     }
 
     private String phoneNumber, name, email, gender, avatar, address;
+
+    public User(String phoneNumber,String password, String name, String email ) {
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+    }
+
+
     private String password;
+
+    public User(String id, String password, String newPassword) {
+        this.id = id;
+        this.password = password;
+        this.newPassword = newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    private String newPassword;
+
 
     public Data getData() {
         return data;
@@ -113,7 +135,15 @@ public class User implements Serializable {
     }
 
     public Data data;
+    public Result result;
 
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }
 
     public User(String phoneNumber, String password) {
         this.phoneNumber = phoneNumber;
@@ -145,6 +175,15 @@ public class User implements Serializable {
         private String email;
         private String gender;
 
+        public String getRole() {
+            return role;
+        }
+
+        public void setRole(String role) {
+            this.role = role;
+        }
+
+        private String role;
         public String getId() {
             return id;
         }
@@ -221,6 +260,76 @@ public class User implements Serializable {
                     '}';
 
         }
+
+    }
+    public static class Result implements Serializable {
+
+        private String id;
+
+        public Result(String id, String phoneNumber, String name, String email, String gender) {
+            this.id = id;
+            this.phoneNumber = phoneNumber;
+            this.name = name;
+            this.email = email;
+            this.gender = gender;
+        }
+
+        private String phoneNumber;
+        private String name;
+        private String email;
+
+        @Override
+        public String toString() {
+            return "Result{" +
+                    "id='" + id + '\'' +
+                    ", phoneNumber='" + phoneNumber + '\'' +
+                    ", name='" + name + '\'' +
+                    ", email='" + email + '\'' +
+                    ", gender='" + gender + '\'' +
+                    '}';
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getGender() {
+            return gender;
+        }
+
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
+
+        private String gender;
 
     }
 }

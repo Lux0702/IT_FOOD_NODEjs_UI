@@ -11,6 +11,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,17 +40,31 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private String phoneNumber;
     private FirebaseAuth mAuth;
     private static final  String TAG=ForgotPasswordActivity.class.getName();
-
+    AutoCompleteTextView autoCompleteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_forgot_password);
         btnNext=findViewById(R.id.btnNext);
         editTextphoneNumber=findViewById(R.id.etPhoneNumber);
 
         mAuth=FirebaseAuth.getInstance();
-
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.items_array, android.R.layout.simple_dropdown_item_1line);
+        autoCompleteTextView.setAdapter(adapter);
+        // Đặt giá trị mặc định
+        autoCompleteTextView.setText(adapter.getItem(0).toString(), false);
+        findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ForgotPasswordActivity.this, SignInActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+            }
+        });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +74,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    phoneNumber=editTextphoneNumber.getText().toString().trim();
+                    phoneNumber=autoCompleteTextView.getText().toString().trim()+ editTextphoneNumber.getText().toString().trim();
                     onClickVerifyPhoneNumber(phoneNumber);
 
                 }
@@ -89,7 +107,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                             public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 super.onCodeSent(verificationId, forceResendingToken);
                                 resetpass=true;
-                                goToEnterActivity(phoneNumber,verificationId,resetpass);
+                                goToEnterActivity(phoneNumber,verificationId);
                             }
                         })          // OnVerificationStateChangedCallbacks
                         .build();
@@ -129,11 +147,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    private void goToEnterActivity(String phoneNumber, String verificationId,Boolean reset) {
+    private void goToEnterActivity(String phoneNumber, String verificationId) {
         Intent intent = new Intent(ForgotPasswordActivity.this, VerificationCodeActivity.class);
         intent.putExtra("phone_Number", phoneNumber);
         intent.putExtra("verification_Id", verificationId);
-        intent.putExtra("reset_password", reset);
         startActivity(intent);
         finish();
     }

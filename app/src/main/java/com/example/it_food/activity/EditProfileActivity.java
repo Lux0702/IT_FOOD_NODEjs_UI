@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,21 +38,32 @@ import retrofit2.Response;
 public class EditProfileActivity extends AppCompatActivity {
     Button btnEditPasswd;
     ProgressDialog progressDialog;
-    EditText edtPhone, edtUserName, edtEmail, edtGender;
+    String phoneNumber, currentPassword;
+    EditText edtPhone, edtUserName, edtEmail, edtGender,edtPassword;
     ImageView imgProfileEdit;
     User user;
     private APIService apiService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_edit_profile);
         btnEditPasswd = findViewById(R.id.btnEditPasswd);
-
+        findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+            }
+        });
         if(SharedPreferences.getInstance(this).isLoggedIn()) {
             edtUserName = findViewById(R.id.edtUserName);
             edtEmail = findViewById(R.id.edtEmail);
             edtPhone = findViewById(R.id.edtPhone);
             edtGender = findViewById(R.id.edtGender);
+            edtPassword= findViewById(R.id.edtPassword);
             imgProfileEdit = findViewById(R.id.imgProfileEdit);
 
             user = SharedPreferences.getInstance(this).getUser();
@@ -58,7 +71,9 @@ public class EditProfileActivity extends AppCompatActivity {
             edtPhone.setText(user.getPhoneNumber());
             edtUserName.setText(user.getName());
             edtGender.setText(user.getGender());
-
+            edtPassword.setText(getIntent().getStringExtra("m_Password"));
+            currentPassword=edtPassword.getText().toString();
+            phoneNumber=edtPhone.getText().toString();
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfileEdit);
 
         } else {
@@ -77,9 +92,7 @@ public class EditProfileActivity extends AppCompatActivity {
         btnEditPasswd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditProfileActivity.this, ResetPasswordActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+                gotoChangePasswordActivity(phoneNumber,currentPassword);
             }
         });
     }
@@ -136,5 +149,13 @@ public class EditProfileActivity extends AppCompatActivity {
         String path = cursor.getString(column_index);
         cursor.close();
         return path;
+    }
+    private void gotoChangePasswordActivity(String phoneNumber, String currentPassword) {
+        Intent intent = new Intent(EditProfileActivity.this, ChangePasswordActivity.class);
+        intent.putExtra("phone_Number", phoneNumber);
+        intent.putExtra("current_Password", currentPassword);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
+        finish();
     }
 }

@@ -1,10 +1,14 @@
 package com.example.it_food.InterFace;
 
+import com.example.it_food.model.GetUserResponse;
+import com.example.it_food.model.Result;
 import com.example.it_food.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.Map;
+
+
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -37,7 +41,8 @@ public interface APIService {
             .create(APIService.class);
 
     @GET("users/phone-number")
-    Call<User> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
+    //Call<GetUserResponse> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
+    Call<ResponseBody> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
 
     @POST("users/login")
     Call<User> login(@Body User user);
@@ -57,7 +62,19 @@ public interface APIService {
             @Part MultipartBody.Part image
     );
     @PATCH("users/reset-password")
-    Call<Void> resetPassword(@Body User user);
+    Call<User> ChangePassword(@Body User user);
     @PATCH("users/forgot-password")
-    Call<Void> resetPasswordForgot(@Body User user);
+    Call<User> resetPasswordForgot(@Body User user);
+    @GET("orders/total-orders-day")
+    Call<Result> getTotalOrdersDay(@Query("userId") String userId);
+
+    @GET("orders/total-prices-day")
+    Call<Result> getTotalPricesDay(@Query("userId") String userId);
+
+    @GET("orders/total-orders-day-series")
+    Call<Result> getTotalOrdersDaySeries(@Query("userId") String userId, @Query("startDay") String startDay, @Query("endDay") String endDay);
+
+    @GET("orders/total-prices-day-series")
+    Call<Result> getTotalPricesDaySeries(@Query("userId") String userId,  @Query("startDay") String startDay, @Query("endDay") String endDay);
+
 }
