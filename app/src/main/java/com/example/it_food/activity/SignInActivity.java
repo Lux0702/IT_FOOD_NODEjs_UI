@@ -128,14 +128,10 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
-    private void goToActivity() {
+
+
+    private void goToActivity( ) {
         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-=======
-    private void goToActivity(String mpassword) {
-        Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-        //intent.putExtra("m_Password",mpassword);
->>>>>>> 52e953a21445d215bee334ed2755ac2f15afe0b5
         startActivity(intent);
         finish();
     }

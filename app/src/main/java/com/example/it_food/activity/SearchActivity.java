@@ -14,9 +14,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.it_food.Adapter.EditProductAdapter;
+import com.example.it_food.Adapter.ProductAdapter;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.manager.EditProductActivity;
@@ -37,6 +39,7 @@ import retrofit2.Response;
 public class SearchActivity extends AppCompatActivity {
 
     EditText edtSearch;
+    private TextView txtTitle;
     private ArrayList<ProductItem> mListProduct;
     private RecyclerView recyclerViewShowProduct;
 
@@ -45,10 +48,13 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         // Áp dụng animation cho chuyển đổi vào SearchActivity
+        String title = getIntent().getStringExtra("title");
+        String idcategory = getIntent().getStringExtra("idcategory");
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         edtSearch=findViewById(R.id.edtSearch);
         Drawable[] drawables = edtSearch.getCompoundDrawablesRelative();
         Drawable drawableEnd = getResources().getDrawable(R.drawable.ic_cancel);
+        mListProduct = new ArrayList<>();
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -67,23 +73,9 @@ public class SearchActivity extends AppCompatActivity {
                 // Không cần thực hiện hành động sau khi thay đổi nội dung
             }
         });
-/*
-        edtSearch.setOnTouchListener(new View.OnTouchListener() {
 
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                final int DRAWABLE_RIGHT = 2;
 
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (event.getRawX() >= (edtSearch.getRight() - edtSearch.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        // Xử lý sự kiện khi người dùng chạm vào drawableEnd
-                        onBackPressed(); // Trả về Activity trước đó
-                        return true;
-                    }
-                }
-                return false;            }
-        });
-*/
+
 /**/
 // Ẩn DrawableEnd (index 2)
         drawables[2] = null;
@@ -143,8 +135,8 @@ public class SearchActivity extends AppCompatActivity {
                             ProductItem productItem = new ProductItem(id, name, desc, price, image);
                             mListProduct.add(productItem);
                         }
-                        EditProductAdapter editProductAdapter = new EditProductAdapter(mListProduct, SearchActivity.this);
-                        recyclerViewShowProduct.setAdapter(editProductAdapter);
+                        ProductAdapter productAdapter = new ProductAdapter(mListProduct, SearchActivity.this);
+                        recyclerViewShowProduct.setAdapter(productAdapter);
                     } catch (JSONException | IOException e) {
                         e.printStackTrace();
                     }
