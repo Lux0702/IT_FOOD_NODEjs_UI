@@ -157,8 +157,8 @@
                             android:layout_marginTop="@dimen/_4pxv"
                             android:layout_width="@dimen/_25pxh"
                             android:scaleType="fitXY"
-                            android:src="@drawable/img_location"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_location"/>
+                            android:src="@drawable/ic_favorite"
+                            tools:ignore="ContentDescription" tools:src="@drawable/ic_favorite"/>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearRowmenu"
@@ -195,8 +195,8 @@
                             android:layout_marginVertical="@dimen/_2pxv"
                             android:layout_width="@dimen/_25pxh"
                             android:scaleType="fitXY"
-                            android:src="@drawable/img_user"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+                            android:src="@drawable/ic_person"
+                            tools:ignore="ContentDescription" tools:src="@drawable/ic_person"/>
                     </FrameLayout>
                 </LinearLayout>
             </LinearLayout>

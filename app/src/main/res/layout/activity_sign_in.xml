@@ -210,6 +210,7 @@
                         android:background="@drawable/white_pixel"
                         android:drawablePadding="8dp"
                         android:ellipsize="end"
+                        android:inputType="textPassword"
                         android:hint="Your password"
                         android:paddingLeft="10dp"
                         android:singleLine="true" />

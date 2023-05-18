@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderCompletedActivity">
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearOrdercomplete"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageAppreciationbr"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_322pxh"
+            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_marginStart="@dimen/_5pxh"
+            android:layout_marginTop="@dimen/_90pxv"
+            android:layout_width="@dimen/_380pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_logo"
+            tools:ignore="ContentDescription" tools:src="@drawable/ic_logo"/>
+        <TextView android:gravity="center_horizontal"
+            android:id="@+id/txtThankyoufors"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_82pxh"
+            android:layout_marginStart="@dimen/_82pxh"
+            android:layout_marginTop="@dimen/_67pxv"
+            android:layout_width="match_parent"
+            android:text="Thank you for s"
+            style="@style/txtMontezregular40" tools:text="Thank you for "/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnPlaceOrder"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_75pxh"
+            android:layout_marginStart="@dimen/_82pxh"
+            android:layout_marginTop="@dimen/_52pxv"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.03"
+            android:paddingBottom="@dimen/_18pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_18pxv" android:singleLine="true"
+            android:text="Place_order"
+            android:textAllCaps="false" style="@style/btnSolidRounded_7" tools:text="Place_order"/>
+    </LinearLayout>
+</LinearLayout>

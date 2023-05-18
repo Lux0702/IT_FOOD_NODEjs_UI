@@ -20,6 +20,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".activity.OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OrderCompletedActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.manager.EditProductActivity"
             android:exported="false" />
         <activity

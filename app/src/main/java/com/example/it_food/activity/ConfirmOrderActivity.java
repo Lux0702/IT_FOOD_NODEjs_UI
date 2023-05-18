@@ -1,6 +1,7 @@
 package com.example.it_food.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     private List<Delivery> deliveries;
     private List<Address> mListAddress1;
     private LinearLayout linearLocationset;
+    private AppCompatButton btnPlaceMyOrder;
+    private int d = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         txtTotalPrice = findViewById(R.id.txtTotalPrice);
         linearLocationset = findViewById(R.id.linearLocationset);
         txtAddress = findViewById(R.id.txtAddress);
+        btnPlaceMyOrder = findViewById(R.id.btnPlaceMyOrder);
         String address = intent.getStringExtra("nameAddress");
 
         mListAddress1 = new ArrayList<>();
@@ -89,20 +93,55 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     switch (checkedId){
                         case R.id.radioExpress:
                             txtDeliveryPrice.setText("3");
+                            d = 0;
                             callApiTotal(deliveries.get(0).get_id());
                             break;
                         case R.id.radioFast:
                             txtDeliveryPrice.setText("2");
+                            d = 1;
                             callApiTotal(deliveries.get(1).get_id());
                             break;
                         case R.id.radioSave:
                             txtDeliveryPrice.setText("1");
+                            d = 2;
                             callApiTotal(deliveries.get(2).get_id());
                             break;
                     }
                 }
             });
 
+            btnPlaceMyOrder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (txtAddress.getText().toString() == ""){
+                        Toast.makeText(ConfirmOrderActivity.this, "Please chose address", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    Map body = new HashMap<>();
+                    body.put("userId", user.getId());
+                    body.put("address", txtAddress.getText().toString());
+                    body.put("phoneNumber", user.getPhoneNumber());
+                    body.put("delivery", deliveries.get(d).get_id());
+                    APIService.apiService.placeOrder(body).enqueue(new Callback<ResponseBody>(){
+
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            if (response.isSuccessful()){
+                                Intent intent = new Intent(ConfirmOrderActivity.this, OrderCompletedActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else {
+                                Log.d("TAG", "response not success");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            Log.d("TAG", "On Failure");
+                        }
+                    });
+                }
+            });
 
 
         }else {
