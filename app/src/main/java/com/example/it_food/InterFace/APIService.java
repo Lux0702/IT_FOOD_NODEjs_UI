@@ -112,6 +112,10 @@ public interface APIService {
 
     @GET("users/addresses")
     Call<ResponseBody> getAddress(@Query("userId") String id);
+    @POST("orders")
+    Call<ResponseBody> placeOrder(@Body Map<String, Object> body);
+    @POST("comments/add")
+    Call<ResponseBody> addComment(@Body Map<String, Object> body);
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);

@@ -58,7 +58,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
         User user = SharedPreferences.getInstance(mContext).getUser();
         holder.bindData(productItem.getImage());
         holder.name.setText(productItem.getName());
-        holder.price.setText(String.valueOf(productItem.getPrice()));
+        holder.price.setText(String.valueOf(productItem.getPrice()*productItem.getQuantity()));
         holder.quantity.setText(String.valueOf(productItem.getQuantity()));
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +100,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
                             Log.d("", "success");
                             productItem.setQuantity(productItem.getQuantity()+1);
                             holder.quantity.setText(String.valueOf(productItem.getQuantity()));
+                            holder.price.setText(String.valueOf(productItem.getPrice()*productItem.getQuantity()));
                         }else {
                             Log.d("", "response error");
                         }
@@ -126,6 +127,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
                             Log.d("", "success");
                             productItem.setQuantity(productItem.getQuantity()-1);
                             holder.quantity.setText(String.valueOf(productItem.getQuantity()));
+                            holder.price.setText(String.valueOf(productItem.getPrice()*productItem.getQuantity()));
                         }else {
                             Log.d("", "response error");
                         }

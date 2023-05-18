@@ -71,7 +71,7 @@ public class AddressItemAdapter extends RecyclerView.Adapter<AddressItemAdapter.
                 Map<String, Object> body = new HashMap<>();
                 body.put("id", address.get_id());
                 body.put("userId", user.getId());
-                APIService.apiService.deleteCart(body).enqueue(new Callback<ResponseBody>() {
+                APIService.apiService.deleteAddress(body).enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){

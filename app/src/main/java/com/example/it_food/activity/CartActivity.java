@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.it_food.Adapter.ProductItemAdapter;
@@ -20,6 +22,7 @@ import com.example.it_food.R;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.ProductItem;
 import com.example.it_food.model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +44,7 @@ public class CartActivity extends AppCompatActivity implements ProductItemAdapte
     private List<ProductItem> mListProduct;
     private AppCompatButton confirmOrder;
     private ProductItemAdapter productItemAdapter;
+    private LinearLayout linearRowarrowleft;
 
 
     @Override
@@ -52,10 +56,17 @@ public class CartActivity extends AppCompatActivity implements ProductItemAdapte
 
         confirmOrder = findViewById(R.id.btnConfirmOrder);
         recyclerView = findViewById(R.id.recyclerListellipsetwenty);
+        linearRowarrowleft = findViewById(R.id.linearRowarrowleft);
+        linearRowarrowleft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
         if (SharedPreferences.getInstance(this).isLoggedIn()){
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(linearLayoutManager);
-
 
             mListProduct = new ArrayList<>();
             callApiGetProductInCart();
@@ -119,5 +130,35 @@ public class CartActivity extends AppCompatActivity implements ProductItemAdapte
                 Toast.makeText(CartActivity.this, "Call api error", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void bottomNavigation() {
+        FloatingActionButton btnCart= findViewById(R.id.btnCart);
+        ImageView imbHome = findViewById(R.id.imbHome);
+        ImageView imbFavorite = findViewById(R.id.imbFavorite);
+        ImageView imbChat = findViewById(R.id.imbChat);
+        ImageView imbProfile = findViewById(R.id.imbProfile);
+        imbHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        imbProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

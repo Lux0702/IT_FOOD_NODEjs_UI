@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingTop="@dimen/_10pxh"
+    android:paddingTop="@dimen/_15pxh"
     android:paddingBottom="@dimen/_10pxh"
     android:layout_height="wrap_content">
 
@@ -14,8 +14,8 @@
         android:orientation="horizontal" style="@style/groupStylecornerRadius_6">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageProduct"
-            android:layout_height="@dimen/_70pxh"
-            android:layout_width="@dimen/_70pxh"
+            android:layout_height="@dimen/_90pxh"
+            android:layout_width="@dimen/_90pxh"
             android:scaleType="centerCrop"
             tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse20_60x60"/>
         <LinearLayout android:gravity="start"
@@ -27,7 +27,7 @@
             android:layout_marginTop="@dimen/_4pxv"
             android:layout_weight="0.8" android:layout_width="0dp" android:orientation="vertical">
             <LinearLayout android:id="@+id/linearRowwatermelon"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginEnd="@dimen/_1pxh"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <TextView android:ellipsize="end"
@@ -44,7 +44,7 @@
                     android:layout_width="48dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="@dimen/_20pxh"
-                    android:layout_height="match_parent"
+                    android:layout_height="28dp"
                     style="@style/groupStylered_A400_63cornerRadius">
                     <ImageView
                         android:src="@drawable/baseline_delete_outline_24"
@@ -54,7 +54,7 @@
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout android:id="@+id/linearAMountSetting"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/_1pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
 
@@ -71,14 +71,14 @@
                     tools:text="$30" />
                 <LinearLayout android:id="@+id/linearRowpath"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_6pxv"
                     android:layout_marginEnd="@dimen/_20pxh"
+                    android:layout_marginTop="5dp"
                     android:weightSum="4"
                     android:layout_width="@dimen/_150pxh"
                     android:orientation="horizontal">
                     <LinearLayout android:gravity="center_horizontal"
                         android:id="@+id/linearIconMinus"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_width="19dp"
                         android:orientation="vertical" style="@style/groupStylered_A400_63cornerRadius">
@@ -86,10 +86,9 @@
                             android:id="@+id/viewPathTwo"
                             android:layout_gravity="center_horizontal"
                             android:layout_height="@dimen/_1pxv"
-                            android:layout_marginBottom="@dimen/_9pxv"
                             android:layout_marginEnd="@dimen/_5pxh"
-                            android:layout_marginStart="@dimen/_6pxh"
-                            android:layout_marginTop="@dimen/_9pxv" android:layout_width="@dimen/_7pxh"/>
+                            android:layout_marginStart="@dimen/_4pxh"
+                            android:layout_marginTop="@dimen/_13pxv" android:layout_width="@dimen/_10pxh"/>
                     </LinearLayout>
                     <TextView android:ellipsize="end"
                         android:id="@+id/txtAmountTwo"
@@ -103,12 +102,12 @@
                         style="@style/txtPoppinsmedium16_1" tools:text="@string/lbl_1"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1">
                         <ImageView
                             android:background="@drawable/rectangle_bg_red_a400_radius_8"
                             android:id="@+id/btnGridTwo"
-                            android:layout_height="@dimen/_20pxh"
+                            android:layout_height="match_parent"
                             android:layout_marginStart="@dimen/_13pxh"
                             android:layout_width="@dimen/_19pxh"
                             android:paddingHorizontal="@dimen/_5pxh"
