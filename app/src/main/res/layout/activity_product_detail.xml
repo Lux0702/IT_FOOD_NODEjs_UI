@@ -11,7 +11,7 @@
             android:layout_gravity="top|start"
             android:layout_height="@dimen/_381pxv"
             android:layout_marginBottom="@dimen/_10pxv" android:layout_width="match_parent">
-            <ImageView android:id="@+id/imageUnsplashMaqdFC"
+            <ImageView android:id="@+id/imgFood"
                 android:layout_gravity="start"
                 android:layout_height="@dimen/_381pxh"
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:layout_marginTop="@dimen/_50pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
                 <TextView android:ellipsize="end"
-                    android:id="@+id/txtSalad"
+                    android:id="@+id/txtFoodName"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_2pxv"
                     android:layout_marginTop="@dimen/_10pxv"
@@ -64,12 +64,12 @@
                         android:layout_width="@dimen/_48pxh"
                         android:layout_height="@dimen/_48pxh"
                         android:layout_marginStart="50dp"
-                        android:background="@drawable/rectangle_bg_red_a400_63_radius_8"
+                        android:background="@drawable/rectangle_bg_gray_201_radius_2"
                         android:contentDescription="Favorite"
                         android:paddingHorizontal="@dimen/_10pxh"
                         android:paddingVertical="@dimen/_10pxv"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/img_favorite"
+                        android:src="@drawable/ic_favorite"
                         tools:ignore="ContentDescription" />
                 </LinearLayout>
             </LinearLayout>
@@ -131,7 +131,7 @@
                 </LinearLayout>
             </LinearLayout>
             <TextView android:gravity="center_horizontal"
-                android:id="@+id/txtTryingtostay"
+                android:id="@+id/txtDescription"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_23pxh"
                 android:layout_marginStart="@dimen/_23pxh"
@@ -159,7 +159,7 @@
                     android:contentDescription="-" />
 
                 <EditText
-                    android:id="@+id/etQuantity"
+                    android:id="@+id/edtQuantity"
                     android:layout_width="65dp"
                     android:layout_height="match_parent"
                     android:inputType="number"
@@ -177,7 +177,7 @@
                     android:contentDescription="+" />
 
                 <TextView
-                    android:id="@+id/txtPrice"
+                    android:id="@+id/txtFoodPrice"
                     style="@style/txtPoppinsmedium18"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

@@ -1,5 +1,6 @@
 package com.example.it_food.InterFace;
 
+import com.example.it_food.R;
 import com.example.it_food.model.Category;
 import com.example.it_food.model.GetUserResponse;
 import com.example.it_food.model.ProductItem;
@@ -28,6 +29,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 public interface APIService {
 
@@ -43,7 +45,6 @@ public interface APIService {
             .create(APIService.class);
 
     @GET("users/phone-number")
-    //Call<GetUserResponse> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
     Call<ResponseBody> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
 
     @POST("users/login")
@@ -65,8 +66,12 @@ public interface APIService {
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
+<<<<<<< HEAD
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
+=======
+    //@PATCH("users/forgot-password")
+>>>>>>> 52e953a21445d215bee334ed2755ac2f15afe0b5
 
     @GET("categories")
     Call<ResponseBody> getCategories();
@@ -86,6 +91,27 @@ public interface APIService {
 
     @GET("orders/total-prices-day-series")
     Call<Result> getTotalPricesDaySeries(@Query("userId") String userId,  @Query("startDay") String startDay, @Query("endDay") String endDay);
+    @POST("cart-items/add")
+    Call<ResponseBody> addToCart(@Body Map<String, Object> body);
+    @POST("users/add-address")
+    Call<ResponseBody> addAddress(@Body Map<String, Object> body);
+
+    @DELETE("cart-items/delete")
+    Call<ResponseBody> deleteCart(@QueryMap Map<String, Object> body);
+
+    @PATCH("users/reset-password")
+    Call<Void> resetPassword(@Body User user);
+    @DELETE("users/delete-address")
+    Call<ResponseBody> deleteAddress(@QueryMap Map<String, Object> body);
+    @GET("orders/total-price")
+    Call<ResponseBody> totalPrice(@Query("userId") String id);
+    @GET("deliveries")
+    Call<ResponseBody> getDeliveries(@Query("userId") String id);
+    @GET("orders/total-price")
+    Call<ResponseBody> totalPriceWithDelivery(@QueryMap Map<String, Object> body);
+
+    @GET("users/addresses")
+    Call<ResponseBody> getAddress(@Query("userId") String id);
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);

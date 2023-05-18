@@ -8,7 +8,8 @@
 
     <FrameLayout android:id="@+id/frameConfirmorder"
         android:layout_height="match_parent"
-        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
         <LinearLayout android:id="@+id/linearColumnarrowleft"
             android:layout_gravity="center"
             android:layout_height="match_parent"
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_11pxh"
                 android:layout_marginStart="@dimen/_11pxh"
-                android:layout_marginTop="@dimen/_38pxv"
+                android:layout_marginTop="@dimen/_18pxv"
                 android:layout_width="wrap_content"
                 android:singleLine="true"
                 android:text="Delivery to"
@@ -160,19 +161,51 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_16pxv"
                         android:layout_marginEnd="@dimen/_8pxh"
-                        android:layout_marginStart="@dimen/_111pxh"
+                        android:layout_marginStart="@dimen/_50pxh"
                         android:layout_marginTop="@dimen/_18pxv"
                         android:layout_weight="0.75"
                         android:layout_width="0dp"
                         android:letterSpacing="0.03"
                         android:singleLine="true"
-                        android:text="2121 6352 8465"
-                        style="@style/txtBentonSansRegularbentonsansregular14" tools:text="121 6352 8465"/>
+                        android:text="Thanh toán khi nhận hàng"
+                        style="@style/txtBentonSansRegularbentonsansregular14" tools:text="Thanh toán khi nhận hàng"/>
                 </LinearLayout>
             </LinearLayout>
+            <TextView
+                android:text="Chose Delivery"
+                android:layout_marginStart="@dimen/_11pxh"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratromansemibold16" tools:text="Chose Delivery"/>
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <RadioButton
+                    android:id="@+id/radioExpress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textColor="@color/black"
+                    android:text="Express" />
+                <RadioButton
+                    android:id="@+id/radioFast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Fast" />
+                <RadioButton
+                    android:id="@+id/radioSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Save" />
+            </RadioGroup>
             <FrameLayout android:id="@+id/frameStackpattern"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_58pxv"
+                android:layout_marginTop="@dimen/_30pxv"
                 android:layout_gravity="center"
                 android:layout_width="@dimen/_347pxh" style="@style/groupStylered_3">
                 <ImageView android:id="@+id/imagePattern"
@@ -236,7 +269,7 @@
                             android:text="delivery charge"
                             style="@style/txtBentonSansMediumbentonsansmedium14" tools:text="delivery charge"/>
                         <TextView android:ellipsize="end"
-                            android:id="@+id/txtPriceOne"
+                            android:id="@+id/txtDeliveryPrice"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_1pxv"
                             android:layout_marginStart="@dimen/_1pxh"
@@ -253,30 +286,7 @@
                         android:layout_marginEnd="@dimen/_14pxh"
                         android:layout_marginStart="@dimen/_17pxh"
                         android:layout_marginTop="@dimen/_4pxv"
-                        android:layout_width="match_parent" android:orientation="horizontal">
-                        <TextView android:ellipsize="end"
-                            android:id="@+id/txtDiscount"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_1pxv"
-                            android:layout_weight="0.66"
-                            android:layout_width="wrap_content"
-                            android:letterSpacing="0.03"
-                            android:singleLine="true"
-                            android:text="Discount"
-                            style="@style/txtBentonSansMediumbentonsansmedium14" tools:text="Discount"/>
-                        <TextView android:ellipsize="end"
-                            android:id="@+id/txtPriceTwo"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_marginTop="@dimen/_1pxv"
-                            android:layout_weight="0.34"
-                            android:layout_width="0dp"
-                            android:gravity="right"
-                            android:letterSpacing="0.03"
-                            android:singleLine="true"
-                            android:text="202"
-                            style="@style/txtBentonSansMediumbentonsansmedium14" tools:text="202"/>
-                    </LinearLayout>
+                        android:layout_width="match_parent" android:orientation="horizontal"/>
                     <LinearLayout android:id="@+id/linearRowtotal"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_13pxh"
@@ -294,7 +304,7 @@
                             android:text="@string/lbl_total"
                             style="@style/txtBentonSansBoldbentonsansbold18" tools:text="@string/lbl_total"/>
                         <TextView android:ellipsize="end"
-                            android:id="@+id/txtPriceThree"
+                            android:id="@+id/txtTotalPrice"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_100pxh"
                             android:layout_marginTop="@dimen/_1pxv"
@@ -303,8 +313,8 @@
                             android:layout_width="0dp"
                             android:letterSpacing="0.03"
                             android:singleLine="true"
-                            android:text="150"
-                            style="@style/txtBentonSansBoldbentonsansbold18" tools:text="150"/>
+                            android:text=""
+                            style="@style/txtBentonSansBoldbentonsansbold18" tools:text=""/>
                     </LinearLayout>
                     <androidx.appcompat.widget.AppCompatButton
                         android:ellipsize="end" android:gravity="center"

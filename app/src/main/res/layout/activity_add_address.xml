@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/white"
+    tools:context=".activity.AddAddressActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:gravity="center_horizontal"
+        android:id="@+id/toolbarToolbar"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_20pxh"
+        android:layout_marginStart="@dimen/_20pxh" app:contentInsetStart="0dp">
+        <LinearLayout android:id="@+id/linearRowbell"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <LinearLayout android:id="@+id/linearRowarrowleft"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.88"
+                android:layout_width="0dp" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageArrowleft"
+                    android:layout_height="@dimen/_16pxh"
+                    android:layout_marginBottom="@dimen/_7pxv"
+                    android:layout_marginTop="@dimen/_6pxv"
+                    android:layout_width="@dimen/_9pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowleft_black_900_16x9"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_black_900_16x9"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtYourCart"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_weight="0.93"
+                    android:layout_width="0dp"
+                    android:singleLine="true"
+                    android:text="Add Location"
+                    style="@style/txtMontserratromanbold24" tools:text="Add Location"/>
+            </LinearLayout>
+                    </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="5">
+    <EditText
+        android:id="@+id/txtNewAddress"
+        android:layout_marginTop="@dimen/_100pxh"
+        android:text="Điền địa chỉ mới vào đây"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/_20pxh"
+        android:layout_marginEnd="@dimen/_20pxh"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"/>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_weight="4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddNewAddress"
+        style="@style/btnSolidRounded_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_200pxh"
+        android:layout_marginBottom="@dimen/_20pxh"
+        android:layout_marginStart="@dimen/_53pxh"
+        android:layout_marginEnd="@dimen/_52pxh"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:paddingStart="@dimen/_30pxh"
+        android:paddingTop="@dimen/_19pxv"
+        android:paddingEnd="@dimen/_30pxh"
+        android:paddingBottom="@dimen/_19pxv"
+        android:singleLine="true"
+        android:text="ADD"
+        android:textAllCaps="false"
+        tools:text="ADD" />
+
+
+</LinearLayout>
+
+</LinearLayout>

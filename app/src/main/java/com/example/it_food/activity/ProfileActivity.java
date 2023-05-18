@@ -56,8 +56,9 @@ public class ProfileActivity extends AppCompatActivity {
             txtPassword=getIntent().getStringExtra("m_Password");
             phone=txtPhone.getText().toString();
 
-            if (user.getGender()!="Nam")
+            if (!user.getGender().equalsIgnoreCase("Nam")) {
                 imgGender.setImageResource(R.drawable.ic_female);
+            }
 
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfile);
 
