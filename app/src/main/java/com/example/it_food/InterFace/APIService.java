@@ -44,7 +44,6 @@ public interface APIService {
             .create(APIService.class);
 
     @GET("users/phone-number")
-    //Call<GetUserResponse> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
     Call<ResponseBody> getUserByPhoneNumber(@Query("phoneNumber") String phoneNumber);
 
     @POST("users/login")
@@ -91,10 +90,21 @@ public interface APIService {
     @POST("users/add-address")
     Call<ResponseBody> addAddress(@Body Map<String, Object> body);
 
-
-    @GET("users/address")
-    Call<ResponseBody> getAddress(@Query("userId") String id);
-
     @DELETE("cart-items/delete")
     Call<ResponseBody> deleteCart(@QueryMap Map<String, Object> body);
+
+    @PATCH("users/reset-password")
+    Call<Void> resetPassword(@Body User user);
+    @DELETE("users/delete-address")
+    Call<ResponseBody> deleteAddress(@QueryMap Map<String, Object> body);
+    @GET("orders/total-price")
+    Call<ResponseBody> totalPrice(@Query("userId") String id);
+    @GET("deliveries")
+    Call<ResponseBody> getDeliveries(@Query("userId") String id);
+    @GET("orders/total-price")
+    Call<ResponseBody> totalPriceWithDelivery(@QueryMap Map<String, Object> body);
+
+    @GET("users/addresses")
+    Call<ResponseBody> getAddress(@Query("userId") String id);
+
 }

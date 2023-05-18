@@ -45,7 +45,7 @@ public class AddAddressActivity extends AppCompatActivity {
                 }
                 Map<String, Object> body = new HashMap<>();
                 body.put("userId", user.getId());
-                body.put("address", txtNewAddress.getText());
+                body.put("address", txtNewAddress.getText().toString());
                 APIService.apiService.addAddress(body).enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

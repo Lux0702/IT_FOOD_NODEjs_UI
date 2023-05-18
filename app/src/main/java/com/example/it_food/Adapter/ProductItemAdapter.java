@@ -32,11 +32,14 @@ import retrofit2.Response;
 
 public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.ProductItemViewHolder>{
     private final List<ProductItem> mListProduct;
+
+    private OnCartItemRemovedListener listener;
     private Context mContext;
 
-    public ProductItemAdapter(List<ProductItem> mListProduct, Context mContext) {
+    public ProductItemAdapter(List<ProductItem> mListProduct, Context mContext, OnCartItemRemovedListener listener) {
         this.mListProduct = mListProduct;
         this.mContext = mContext;
+        this.listener = listener;
     }
 
     @NonNull
@@ -47,18 +50,42 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductItemViewHolder holder, int position) {
-        ProductItem productItem = mListProduct.get(position);
+    public void onBindViewHolder(@NonNull ProductItemViewHolder holder, final int position) {
+        final ProductItem productItem = mListProduct.get(position);
         if (productItem == null){
             return;
         }
+        User user = SharedPreferences.getInstance(mContext).getUser();
         holder.bindData(productItem.getImage());
         holder.name.setText(productItem.getName());
         holder.price.setText(String.valueOf(productItem.getPrice()));
         holder.quantity.setText(String.valueOf(productItem.getQuantity()));
 
-        User user = SharedPreferences.getInstance(mContext).getUser();
-        
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Map<String, Object> body = new HashMap<>();
+                body.put("userId", user.getId());
+                body.put("productId", productItem.get_id());
+                APIService.apiService.deleteCart(body).enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            Log.d("", "success");
+                            int pos = holder.getAdapterPosition();
+                            listener.onCartItemRemoved(pos);
+                        }else {
+                            Log.d("", "response error");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Log.d("", "error");
+                    }
+                });
+            }
+        });
         holder.plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +112,6 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
                 });
             }
         });
-
         holder.minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +138,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
                 });
             }
         });
+
     }
 
     @Override
@@ -123,12 +150,16 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
     }
 
 
+    public interface OnCartItemRemovedListener {
+        void onCartItemRemoved(int position);
+    }
+
     public class ProductItemViewHolder extends RecyclerView.ViewHolder{
 
         private final ImageView imageProduct;
         private ImageView plus;
         private final TextView name, price, quantity;
-        private LinearLayout minus;
+        private LinearLayout minus, delete;
 
 
         public ProductItemViewHolder(@NonNull View itemView) {
@@ -139,6 +170,7 @@ public class ProductItemAdapter extends RecyclerView.Adapter<ProductItemAdapter.
             quantity = itemView.findViewById(R.id.txtAmountTwo);
             plus = itemView.findViewById(R.id.btnGridTwo);
             minus = itemView.findViewById(R.id.linearIconMinus);
+            delete = itemView.findViewById(R.id.btnDeleteCart);
         }
         public void bindData(String imageUrl) {
             Picasso.get().load(imageUrl).into(imageProduct);

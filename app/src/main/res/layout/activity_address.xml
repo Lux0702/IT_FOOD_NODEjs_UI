@@ -45,7 +45,7 @@
                 android:layout_height="@dimen/_25pxh"
                 android:layout_marginBottom="@dimen/_3pxv"
                 android:layout_marginStart="@dimen/_143pxh"
-                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_marginTop="@dimen/_3pxv"
                 android:layout_width="@dimen/_25pxh"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_grid_black"

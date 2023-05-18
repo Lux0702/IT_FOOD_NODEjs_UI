@@ -35,11 +35,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity implements ProductItemAdapter.OnCartItemRemovedListener {
 
     private RecyclerView recyclerView;
     private List<ProductItem> mListProduct;
     private AppCompatButton confirmOrder;
+    private ProductItemAdapter productItemAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +56,6 @@ public class CartActivity extends AppCompatActivity {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(linearLayoutManager);
 
-            DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-            recyclerView.addItemDecoration(itemDecoration);
 
             mListProduct = new ArrayList<>();
             callApiGetProductInCart();
@@ -74,7 +75,13 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
-    private void callApiGetProductInCart() {
+    @Override
+    public void onCartItemRemoved(int position) {
+        mListProduct.remove(position);
+        productItemAdapter.notifyDataSetChanged();
+    }
+
+    public void callApiGetProductInCart() {
         User user = SharedPreferences.getInstance(this).getUser();
         APIService.apiService.GetProInCart(user.getId()).enqueue(new Callback<ResponseBody>() {
             @Override
@@ -96,7 +103,7 @@ public class CartActivity extends AppCompatActivity {
                             ProductItem productItem = new ProductItem(id, description, itemName, itemPrice, image, quantity);
                             mListProduct.add(productItem);
                         }
-                        ProductItemAdapter productItemAdapter = new ProductItemAdapter(mListProduct, CartActivity.this);
+                        productItemAdapter = new ProductItemAdapter(mListProduct, CartActivity.this, CartActivity.this);
                         recyclerView.setAdapter(productItemAdapter);
                     } catch (JSONException | IOException e) {
                         e.printStackTrace();
@@ -106,6 +113,7 @@ public class CartActivity extends AppCompatActivity {
                     Toast.makeText(CartActivity.this, "response not success", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(CartActivity.this, "Call api error", Toast.LENGTH_SHORT).show();

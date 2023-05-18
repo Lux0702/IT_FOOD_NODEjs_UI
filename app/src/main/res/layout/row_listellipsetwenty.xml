@@ -38,7 +38,20 @@
                     android:layout_width="wrap_content" android:singleLine="true"
                     android:text="Water melon"
                     style="@style/txtMontserratromansemibold16" tools:text="Water melon"/>
-
+                <LinearLayout
+                    android:id="@+id/btnDeleteCart"
+                    android:gravity="center_horizontal"
+                    android:layout_width="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    android:layout_height="match_parent"
+                    style="@style/groupStylered_A400_63cornerRadius">
+                    <ImageView
+                        android:src="@drawable/baseline_delete_outline_24"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout android:id="@+id/linearAMountSetting"
                 android:layout_height="wrap_content"

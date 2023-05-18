@@ -112,7 +112,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                 body.put("quantity", Integer.parseInt(edtQuantity.getText().toString()));
                 APIService.apiService.addToCart(body).enqueue(new Callback<ResponseBody>() {
                     @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    public void onResponse(@androidx.annotation.NonNull Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(ProductDetailActivity.this, "Added to cart", Toast.LENGTH_SHORT).show();
                         } else {

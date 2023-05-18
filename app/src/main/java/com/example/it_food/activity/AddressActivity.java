@@ -113,5 +113,6 @@ public class AddressActivity extends AppCompatActivity implements AddressItemAda
         Intent intent = new Intent(this, ConfirmOrderActivity.class);
         intent.putExtra("nameAddress", mListAddress.get(position).getAddress());
         startActivity(intent);
+        finish();
     }
 }

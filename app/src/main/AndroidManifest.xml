@@ -18,14 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoTitle"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="tiramisu">
         <activity
             android:name=".activity.manager.EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".activity.manager.UploadProductActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity.ShowProductActivity"
             android:exported="false" />
@@ -46,6 +45,15 @@
             android:exported="false" />
         <activity
             android:name=".activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CartActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ConfirmOrderActivity"
@@ -70,9 +78,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.CartActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
