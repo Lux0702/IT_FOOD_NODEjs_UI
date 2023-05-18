@@ -8,9 +8,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.os.Handler;
@@ -45,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     private BannerAdapter bannerAdapter;
     private List<Category> mListCategory;
     private List<ProductItem> mListProduct;
+    EditText editTextSearch;
     RecyclerView recyclerViewCategories, recyclerViewBestSeller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+        editTextSearch = findViewById(R.id.edtSearch);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
         bannerAdapter = new BannerAdapter(this, viewPager);
@@ -72,8 +79,31 @@ public class HomeActivity extends AppCompatActivity {
         callApiGetBestSellerProduct();
 
         bottomNavigation();
+        editTextSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, android.R.anim.fade_out);
+                view.startAnimation(animation);
+                if (hasFocus) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Chuyển đổi sang SearchActivity
+                            Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+                            startActivity(intent);
+
+                            // Áp dụng animation cho chuyển đổi vào SearchActivity
+                            overridePendingTransition(R.anim.slide_up, android.R.anim.fade_out);
+                        }
+                    }, 300);
+                }
+            }
+        });
 
     }
+
+
+
     private void callApiGetCategory() {
         User user = SharedPreferences.getInstance(this).getUser();
         APIService.apiService.getCategories().enqueue(new Callback<ResponseBody>() {
