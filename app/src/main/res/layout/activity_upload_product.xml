@@ -32,18 +32,19 @@
             android:layout_marginEnd="@dimen/_10pxh"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Product"
-            tools:text="Product"
+            android:text="Categories"
             android:layout_height="wrap_content" />
         <Button
-            android:layout_width="70dp"
+            android:id="@+id/buttonAdd"
+            style="@style/btnSolidRounded_1"
+            android:layout_width="103dp"
             android:layout_height="30dp"
+            android:layout_marginStart="110dp"
             android:layout_marginTop="1dp"
-            android:text="Edit"
-            android:textSize="15dp"
-            android:id="@+id/buttonEdit"
-            android:layout_marginStart="150dp"
-            style="@style/btnSolidRounded_1"/>
+            android:text="Add"
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearColumntoday"
@@ -59,7 +60,7 @@
         >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerListellipsetwenty"
+            android:id="@+id/recyclerViewCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

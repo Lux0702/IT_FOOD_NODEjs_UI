@@ -2,6 +2,7 @@ package com.example.it_food.InterFace;
 
 import com.example.it_food.model.Category;
 import com.example.it_food.model.GetUserResponse;
+import com.example.it_food.model.ProductItem;
 import com.example.it_food.model.Result;
 import com.example.it_food.model.User;
 import com.google.gson.Gson;
@@ -17,6 +18,7 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -64,6 +66,7 @@ public interface APIService {
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
     @PATCH("users/forgot-password")
+    Call<User> resetPasswordForgot(@Body User user);
 
     @GET("categories")
     Call<ResponseBody> getCategories();
@@ -71,7 +74,7 @@ public interface APIService {
     Call<ResponseBody> getBestSellerProducts();
     @GET("products")
     Call<ResponseBody> getProductList(@Query("categoryId") String id);
-    Call<User> resetPasswordForgot(@Body User user);
+
     @GET("orders/total-orders-day")
     Call<Result> getTotalOrdersDay(@Query("userId") String userId);
 
@@ -84,4 +87,7 @@ public interface APIService {
     @GET("orders/total-prices-day-series")
     Call<Result> getTotalPricesDaySeries(@Query("userId") String userId,  @Query("startDay") String startDay, @Query("endDay") String endDay);
 
-}
+    @DELETE("products/delete")
+    Call<ProductItem> deleteProduct(@Body ProductItem productItem);
+    @GET("products")
+    Call<ResponseBody> searchString(@Query("searchString") String searchString);}

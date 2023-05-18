@@ -113,7 +113,7 @@ public class SignInActivity extends AppCompatActivity {
 
                     }
                     else{
-                        goToActivity(mpassword);
+                        goToActivity();
                     }
 
                 } else {
@@ -130,9 +130,8 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    private void goToActivity(String mpassword) {
-        Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
-        intent.putExtra("m_Password",mpassword);
+    private void goToActivity() {
+        Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }

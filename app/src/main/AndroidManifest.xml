@@ -20,15 +20,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.manager.AddCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.manager.ChangeCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.manager.EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".activity.manager.UploadProductActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity.ShowProductActivity"
-
             android:exported="false" />
         <activity
             android:name=".activity.manager.StatisticalActivity"
