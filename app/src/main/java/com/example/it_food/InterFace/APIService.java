@@ -23,6 +23,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.POST;
@@ -58,11 +59,12 @@ public interface APIService {
 
     @PATCH("cart-items/update")
     Call<ResponseBody> updateProductInCart(@Body Map<String, Object> body);
-
+    //@Multipart
+    @Multipart
     @POST("users/upload-file")
     Call<ResponseBody> uploadImage(
             @Part("id") RequestBody id,
-            @Part MultipartBody.Part image
+            @Part MultipartBody.Part avatar
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
@@ -115,8 +117,6 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
-    @GET("products")
-    Call<ResponseBody> searchString(@Query("searchString") String searchString);
     @PATCH("categories/update")
     Call<ResponseBody> updateCategory(@Body Map<String, Object> body);
     @POST("categories/add")
@@ -127,4 +127,9 @@ public interface APIService {
     Call<ResponseBody> addProduct(@Body Map<String, Object> body);
     @DELETE("products/delete")
     Call<ResponseBody> deleteProduct(@Body Map<String, Object> body);
-}
+
+    @GET("orders/status")
+    Call<ResponseBody> getOrderHistory(@Query("userId") String id);
+    @GET("products/all")
+    Call<ResponseBody> searchString(@Query("searchString") String searchString);}
+

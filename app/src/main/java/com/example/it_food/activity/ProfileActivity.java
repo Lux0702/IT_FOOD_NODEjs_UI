@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -20,8 +22,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class ProfileActivity extends AppCompatActivity {
     TextView txtId, txtUserName, txtEmail, txtPhone, txtAddress;
     String txtPassword,phone;
-    TextView txtLogout, txtEdit;
+    TextView  txtEdit;
     ImageView imgProfile, imgGender;
+    LinearLayout OrderHistory;
+    ImageButton imgLogout;
 
     String profileImage;
     @Override
@@ -30,7 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_profile);
-
         findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,12 +43,14 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
         if(SharedPreferences.getInstance(this).isLoggedIn()) {
             txtUserName = findViewById(R.id.txtUsername);
             txtEmail = findViewById(R.id.txtEmail);
             txtPhone = findViewById(R.id.txtPhone);
-            txtLogout = findViewById(R.id.txtLogout);
+            imgLogout = findViewById(R.id.imgLogout);
             txtEdit = findViewById(R.id.txtEdit);
+            OrderHistory = findViewById(R.id.OrderHistory);
 
             txtAddress = findViewById(R.id.txtAddress);
             imgGender = findViewById(R.id.imgGender);
@@ -63,12 +68,21 @@ public class ProfileActivity extends AppCompatActivity {
 
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfile);
 
-            txtLogout.setOnClickListener(this::onClick);
+            imgLogout.setOnClickListener(this::onClick);
 
             txtEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     goToActivity(txtPassword);
+                }
+            });
+
+            OrderHistory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(ProfileActivity.this, OrderHistoryActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             });
 
@@ -80,7 +94,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        if (view.equals(txtLogout)) {
+        if (view.equals(imgLogout)) {
             SharedPreferences.getInstance(getApplicationContext()).logout();
             Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);
             startActivity(intent);
