@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -49,12 +50,13 @@ public class FeedbackActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(etLeaveFeedback.getText().toString() == null){
+                if(TextUtils.isEmpty(etLeaveFeedback.getText().toString())){
                     etLeaveFeedback.setError("Please enter feedback");
                     etLeaveFeedback.requestFocus();
                     return;
+                }else {
+                    sendFeedback();
                 }
-                sendFeedback();
             }
         });
     }
