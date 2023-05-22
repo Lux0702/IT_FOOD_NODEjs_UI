@@ -18,6 +18,7 @@ import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.model.User;
 
+import org.checkerframework.checker.units.qual.C;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -144,6 +145,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ChangePasswordActivity.this, "Change Password succcess", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ChangePasswordActivity.this, ProfileActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(ChangePasswordActivity.this, "Error connect", Toast.LENGTH_SHORT).show();
                 }

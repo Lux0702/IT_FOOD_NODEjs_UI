@@ -113,7 +113,7 @@ public class SignInActivity extends AppCompatActivity {
 
                     }
                     else{
-                        goToActivity();
+                        goToActivity(password);
                     }
                 } else {
                     // Xử lý thất bại, hiển thị thông báo lỗi
@@ -130,8 +130,9 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
-    private void goToActivity( ) {
+    private void goToActivity(String mpassword ) {
         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+        //intent.putExtra()
         startActivity(intent);
         finish();
     }
