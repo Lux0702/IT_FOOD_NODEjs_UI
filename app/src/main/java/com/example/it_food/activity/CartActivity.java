@@ -57,11 +57,14 @@ public class CartActivity extends AppCompatActivity implements ProductItemAdapte
         confirmOrder = findViewById(R.id.btnConfirmOrder);
         recyclerView = findViewById(R.id.recyclerListellipsetwenty);
         linearRowarrowleft = findViewById(R.id.linearRowarrowleft);
+
+        bottomNavigation();
         linearRowarrowleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         if (SharedPreferences.getInstance(this).isLoggedIn()){

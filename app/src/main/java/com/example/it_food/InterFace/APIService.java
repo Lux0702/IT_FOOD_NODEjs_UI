@@ -68,11 +68,8 @@ public interface APIService {
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
-
-
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
-
 
 
     @GET("categories")
@@ -121,5 +118,10 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
+
+    @GET("orders/status")
+    Call<ResponseBody> getOrderHistory(@Query("userId") String id);
     @GET("products/all")
     Call<ResponseBody> searchString(@Query("searchString") String searchString);}
+
+

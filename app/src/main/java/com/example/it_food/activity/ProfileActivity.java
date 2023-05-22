@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     String txtPassword,phone;
     TextView  txtEdit;
     ImageView imgProfile, imgGender;
+    LinearLayout OrderHistory;
     ImageButton imgLogout;
 
     String profileImage;
@@ -47,6 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
             txtPhone = findViewById(R.id.txtPhone);
             imgLogout = findViewById(R.id.imgLogout);
             txtEdit = findViewById(R.id.txtEdit);
+            OrderHistory = findViewById(R.id.OrderHistory);
 
             txtAddress = findViewById(R.id.txtAddress);
             imgGender = findViewById(R.id.imgGender);
@@ -70,6 +73,15 @@ public class ProfileActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     goToActivity(txtPassword);
+                }
+            });
+
+            OrderHistory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(ProfileActivity.this, OrderHistoryActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             });
 
