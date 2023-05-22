@@ -148,7 +148,7 @@
                         android:layout_height="@dimen/_31pxv"
                         android:layout_marginStart="@dimen/_57pxh"
                         android:layout_width="@dimen/_30pxh" style="@style/groupStylered_2">
-                        <ImageView android:id="@+id/imageLocation"
+                        <ImageView android:id="@+id/imbFavorite"
                             android:layout_gravity="center"
                             android:layout_height="@dimen/_22pxh"
                             android:layout_marginBottom="@dimen/_4pxv"
@@ -173,7 +173,7 @@
                         android:layout_height="@dimen/_31pxv"
                         android:layout_marginBottom="@dimen/_1pxv"
                         android:layout_width="@dimen/_30pxh" style="@style/groupStylered_2">
-                        <ImageView android:id="@+id/imageMenu"
+                        <ImageView android:id="@+id/imbChat"
                             android:layout_gravity="center"
                             android:layout_height="@dimen/_25pxh"
                             android:layout_marginHorizontal="@dimen/_2pxh"

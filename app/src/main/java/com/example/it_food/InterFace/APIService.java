@@ -121,7 +121,13 @@ public interface APIService {
 
     @GET("orders/status")
     Call<ResponseBody> getOrderHistory(@Query("userId") String id);
+
     @GET("products/all")
-    Call<ResponseBody> searchString(@Query("searchString") String searchString);}
+    Call<ResponseBody> searchString(@Query("searchString") String searchString);
+
+    @GET("orders/products")
+    Call<ResponseBody> getProductByOrderId(@QueryMap Map<String, Object> body);
+
+}
 
 

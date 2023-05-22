@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FeedbackActivity">
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearOrdercomplete"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageEllipseTwentyThree"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_212pxh"
+            android:layout_marginEnd="@dimen/_28pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_74pxv"
+            android:layout_width="@dimen/_218pxh"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" tools:src="@drawable/ic_logo"/>
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtOrderCompleted"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_28pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_47pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratromanbold30" tools:text="Feedback"/>
+
+        <EditText
+            android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_15"
+            android:drawablePadding="@dimen/_11pxh"
+            android:drawableStart="@drawable/img_edit"
+            android:ellipsize="end"
+            android:hint="leave_feedback"
+            android:id="@+id/etLeaveFeedback" android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_27pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.03"
+            android:paddingBottom="@dimen/_20pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_21pxh"
+            android:paddingTop="@dimen/_19pxv" android:singleLine="true"
+            android:textColorHint="@color/black_900_75"
+            style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnSubmit"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_57pxv"
+            android:layout_marginEnd="@dimen/_28pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_75pxv"
+            android:layout_width="@dimen/_233pxh"
+            android:letterSpacing="0.03"
+            android:paddingBottom="@dimen/_18pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_18pxv" android:singleLine="true"
+            android:text="SUBMIT"
+            android:textAllCaps="false" style="@style/btnSolidRounded_7" tools:text="SUBMIT"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

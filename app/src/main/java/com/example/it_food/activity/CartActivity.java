@@ -135,11 +135,11 @@ public class CartActivity extends AppCompatActivity implements ProductItemAdapte
         });
     }
     private void bottomNavigation() {
-        FloatingActionButton btnCart= findViewById(R.id.btnCart);
-        ImageView imbHome = findViewById(R.id.imbHome);
+        FloatingActionButton btnCart= findViewById(R.id.btnCart1);
+        ImageView imbHome = findViewById(R.id.imageHome);
         ImageView imbFavorite = findViewById(R.id.imbFavorite);
         ImageView imbChat = findViewById(R.id.imbChat);
-        ImageView imbProfile = findViewById(R.id.imbProfile);
+        ImageView imbProfile = findViewById(R.id.imageUser);
         imbHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

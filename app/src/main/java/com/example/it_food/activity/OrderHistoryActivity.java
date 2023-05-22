@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.it_food.Adapter.AddressItemAdapter;
@@ -29,22 +33,43 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class OrderHistoryActivity extends AppCompatActivity {
+public class OrderHistoryActivity extends AppCompatActivity implements OrderHistoryAdapter.OnButtonClickListener{
 
     private RecyclerView rycOrderItem;
     private List<OrderHistory> mListOrder;
     private OrderHistoryAdapter orderHistoryAdapter;
 
+    private ImageView imageArrowleft;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order_history);
 
+        imageArrowleft = findViewById(R.id.imageArrowleft);
         rycOrderItem = findViewById(R.id.rycOrderItem);
         mListOrder = new ArrayList<>();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rycOrderItem.setLayoutManager(linearLayoutManager);
+
+        imageArrowleft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderHistoryActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         callApiOrderHistory();
+    }
+
+    @Override
+    public void onButtonClicked(int position) {
+        Intent intent = new Intent(this, OrderDetailActivity.class);
+        intent.putExtra("orderId", mListOrder.get(position).get_id());
+        startActivity(intent);
+        finish();
     }
 
     private void callApiOrderHistory() {
@@ -69,7 +94,7 @@ public class OrderHistoryActivity extends AppCompatActivity {
                             OrderHistory orderHistory = new OrderHistory(id, itemAddress, phoneNumber, delivery, status, totalPrice);
                             mListOrder.add(orderHistory);
                         }
-                        orderHistoryAdapter = new OrderHistoryAdapter(mListOrder, OrderHistoryActivity.this);
+                        orderHistoryAdapter = new OrderHistoryAdapter(mListOrder, OrderHistoryActivity.this, OrderHistoryActivity.this);
                         rycOrderItem.setAdapter(orderHistoryAdapter);
                     } catch (JSONException | IOException e) {
                         e.printStackTrace();

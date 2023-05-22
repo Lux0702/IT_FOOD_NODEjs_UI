@@ -20,10 +20,12 @@ import java.util.List;
 public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapter.OrderHistoryViewHolder>{
 
     private List<OrderHistory> mListOrder;
+    private OnButtonClickListener btnButtonListener;
 
-    public OrderHistoryAdapter(List<OrderHistory> mListOrder, Context mContext) {
+    public OrderHistoryAdapter(List<OrderHistory> mListOrder, Context mContext, OnButtonClickListener btnButtonListener) {
         this.mListOrder = mListOrder;
         this.mContext = mContext;
+        this.btnButtonListener = btnButtonListener;
     }
 
     private Context mContext;
@@ -47,7 +49,13 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
         holder.txtDeliveryOrder.setText(orderHistory.getDelivery());
         holder.txtStatusOrder.setText(orderHistory.getStatus());
         holder.txtTotalPriceOrder.setText(orderHistory.getTotalPrice());
-
+        holder.btnDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = holder.getAdapterPosition();
+                btnButtonListener.onButtonClicked(pos);
+            }
+        });
     }
 
     @Override
@@ -56,6 +64,10 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
             return mListOrder.size();
         }
         return 0;
+    }
+
+    public interface OnButtonClickListener {
+        void onButtonClicked(int position);
     }
 
     public class OrderHistoryViewHolder extends RecyclerView.ViewHolder{

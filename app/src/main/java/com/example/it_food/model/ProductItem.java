@@ -32,6 +32,14 @@ public class ProductItem {
         this.quantity = quantity;
     }
 
+    public ProductItem(String name, String description, Double price, String image, Integer quantity) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.image = image;
+        this.quantity = quantity;
+    }
+
     public ProductItem(String _id, String name, String description, Double price, String image, Integer quantity) {
         this._id = _id;
         this.name = name;
