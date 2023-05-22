@@ -25,11 +25,10 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
 
     EditText etPhone, etPassword;
-    private String mpassword;
     private static final  String TAG=SignInActivity.class.getName();
     RelativeLayout signupLayout;
     private APIService apiService;
-
+    private String m_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,8 +89,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User.Data userData = response.body().getData();
-                    User user=response.body();
-                    mpassword=etPassword.getText().toString();
+                    m_password=etPassword.getText().toString();
                     String id = userData.getId();
                     String name = userData.getName();
                     String phone = userData.getPhoneNumber();
@@ -99,8 +97,9 @@ public class SignInActivity extends AppCompatActivity {
                     String address = userData.getAddress();
                     String gender = userData.getGender();
                     String avatar = userData.getAvatar();
+
                     String role=userData.getRole();
-                    SharedPreferences.getInstance(getApplicationContext()).userLogin(new User(id, phone, name, email, gender, avatar, address));
+                    SharedPreferences.getInstance(getApplicationContext()).userLogin(new User(id, phone, name, email, gender, avatar, address,m_password));
                     // Đăng nhập thành công
                     Toast.makeText(SignInActivity.this, "Login user successfully", Toast.LENGTH_SHORT).show();
                     // Chuyển đến activity tiếp theo sau khi đăng nhập thành công
@@ -113,7 +112,7 @@ public class SignInActivity extends AppCompatActivity {
 
                     }
                     else{
-                        goToActivity(password);
+                        goToActivity();
                     }
                 } else {
                     // Xử lý thất bại, hiển thị thông báo lỗi
@@ -130,7 +129,7 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
-    private void goToActivity(String mpassword ) {
+    private void goToActivity(  ) {
         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
         //intent.putExtra()
         startActivity(intent);

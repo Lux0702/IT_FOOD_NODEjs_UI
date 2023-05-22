@@ -34,7 +34,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     private  String  phone,currentPass,newPass,confirmPass,id;
     Button btnNext;
-    ImageView imageArrowleft;
+    ImageView imgArrowleft;
     EditText etNewPassword,etOldPassword,etConfirmPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +46,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         phone=getIntent().getStringExtra("phone_Number");
         currentPass=getIntent().getStringExtra("current_Password");
 
-        imageArrowleft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChangePasswordActivity.this, EditProfileActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
-            }
-        });
+
         init();
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +97,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         etOldPassword = findViewById(R.id.etOldPassword);
         etNewPassword = findViewById(R.id.etNewPasswordFo);
         etConfirmPassword=findViewById(R.id.etConfirmPasswor);
-        imageArrowleft=findViewById(R.id.imageArrowleft);
+        imgArrowleft=findViewById(R.id.imageArrowleft);
         btnNext = findViewById(R.id.btnNext);
 
     }

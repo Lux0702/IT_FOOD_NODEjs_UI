@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +20,9 @@ import com.example.it_food.model.User;
 public class ProfileActivity extends AppCompatActivity {
     TextView txtId, txtUserName, txtEmail, txtPhone, txtAddress;
     String txtPassword,phone;
-    TextView txtLogout, txtEdit;
+    TextView  txtEdit;
     ImageView imgProfile, imgGender;
+    ImageButton imgLogout;
 
     String profileImage;
     @Override
@@ -39,11 +41,17 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        /*imgLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.getInstance(getApplicationContext()).logout();
+            }
+        });*/
         if(SharedPreferences.getInstance(this).isLoggedIn()) {
             txtUserName = findViewById(R.id.txtUsername);
             txtEmail = findViewById(R.id.txtEmail);
             txtPhone = findViewById(R.id.txtPhone);
-            txtLogout = findViewById(R.id.txtLogout);
+            imgLogout = findViewById(R.id.imgLogout);
             txtEdit = findViewById(R.id.txtEdit);
 
             txtAddress = findViewById(R.id.txtAddress);
@@ -62,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfile);
 
-            txtLogout.setOnClickListener(this::onClick);
+            imgLogout.setOnClickListener(this::onClick);
 
             txtEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        if (view.equals(txtLogout)) {
+        if (view.equals(imgLogout)) {
             SharedPreferences.getInstance(getApplicationContext()).logout();
             Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);
             startActivity(intent);

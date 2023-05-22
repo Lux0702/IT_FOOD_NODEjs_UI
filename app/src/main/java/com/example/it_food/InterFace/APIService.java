@@ -23,6 +23,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.POST;
@@ -58,11 +59,12 @@ public interface APIService {
 
     @PATCH("cart-items/update")
     Call<ResponseBody> updateProductInCart(@Body Map<String, Object> body);
-
+    //@Multipart
+    @Multipart
     @POST("users/upload-file")
     Call<ResponseBody> uploadImage(
             @Part("id") RequestBody id,
-            @Part MultipartBody.Part image
+            @Part MultipartBody.Part avatar
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
