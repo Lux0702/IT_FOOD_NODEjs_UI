@@ -27,8 +27,8 @@
             android:layout_marginStart="@dimen/_82pxh"
             android:layout_marginTop="@dimen/_67pxv"
             android:layout_width="match_parent"
-            android:text="Thank you for s"
-            style="@style/txtMontezregular40" tools:text="Thank you for "/>
+            android:text="Thank you"
+            style="@style/txtMontezregular40" tools:text="Thank you"/>
         <androidx.appcompat.widget.AppCompatButton
             android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnPlaceOrder"

@@ -23,6 +23,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -250,6 +251,56 @@
                 android:text="Edit"
                 android:textAllCaps="false"
                 style="@style/btnSolidRounded_8" tools:text="Edit"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_19pxh"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/OrderHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_marginBottom="@dimen/_13pxv"
+                android:layout_weight="0.71"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="@dimen/_2pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_home"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/baseline_order_24" />
+                <TextView
+                    style="@style/txtMontserratromanregular14_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.89"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Order history" />
+                <ImageView
+                    android:id="@+id/imageArrowRight"
+                    android:layout_width="15dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowright_black_905"
+                    tools:ignore="ContentDescription"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="13dp"
+                    tools:src="@drawable/img_arrowright_black_905" />
+            </LinearLayout>
+
+
         </LinearLayout>
         <TextView
             android:id="@+id/txtLogout"

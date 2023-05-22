@@ -45,14 +45,14 @@ public class ChangePasswordActivity extends AppCompatActivity {
         phone=getIntent().getStringExtra("phone_Number");
         currentPass=getIntent().getStringExtra("current_Password");
 
-        imageArrowleft.setOnClickListener(new View.OnClickListener() {
+        /*imageArrowleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ChangePasswordActivity.this, EditProfileActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
             }
-        });
+        });*/
         init();
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
