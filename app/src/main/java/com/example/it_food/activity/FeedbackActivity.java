@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.it_food.Adapter.OrderHistoryAdapter;
@@ -17,6 +18,7 @@ import com.example.it_food.R;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.OrderHistory;
 import com.example.it_food.model.User;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,9 +34,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FeedbackActivity extends AppCompatActivity {
-    private String productId;
+    private String productId, imageUrl;
     AppCompatButton btnSubmit;
     EditText etLeaveFeedback;
+    ImageView imgProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +46,13 @@ public class FeedbackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
 
         btnSubmit = findViewById(R.id.btnSubmit);
+        imgProduct = findViewById(R.id.imgProductComment);
         etLeaveFeedback = findViewById(R.id.etLeaveFeedback);
 
         Intent intent = getIntent();
         productId = intent.getStringExtra("product");
+        imageUrl = intent.getStringExtra("image");
+        bindData(imageUrl);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +65,10 @@ public class FeedbackActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void bindData(String imageUrl) {
+        Picasso.get().load(imageUrl).into(imgProduct);
     }
 
     private void sendFeedback() {

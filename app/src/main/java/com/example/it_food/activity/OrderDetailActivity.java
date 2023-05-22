@@ -72,6 +72,7 @@ public class OrderDetailActivity extends AppCompatActivity implements OrderDetai
     public void onButtonClicked(int position) {
         Intent intent = new Intent(this, FeedbackActivity.class);
         intent.putExtra("product", mListProduct.get(position).get_id());
+        intent.putExtra("image", mListProduct.get(position).getImage());
         startActivity(intent);
         finish();
     }

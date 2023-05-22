@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylewhite_A700">
-        <ImageView android:id="@+id/imageEllipseTwentyThree"
+        <ImageView android:id="@+id/imgProductComment"
             android:layout_gravity="center_horizontal"
             android:layout_height="@dimen/_212pxh"
             android:layout_marginEnd="@dimen/_28pxh"
