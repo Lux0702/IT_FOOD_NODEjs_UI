@@ -99,10 +99,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
 
     private void callApiGetCategory() {
         User user = SharedPreferences.getInstance(this).getUser();
@@ -203,7 +200,5 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

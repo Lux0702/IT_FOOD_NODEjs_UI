@@ -1,6 +1,7 @@
 package com.example.it_food.Adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -8,26 +9,44 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
-import com.example.it_food.activity.ShowProductActivity;
-import com.example.it_food.activity.manager.EditProductActivity;
+import com.example.it_food.activity.ResetPasswordActivity;
+import com.example.it_food.activity.manager.EditCategoryActivity;
+import com.example.it_food.activity.manager.ManageProductActivity;
+import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.Category;
+import com.example.it_food.model.User;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapter.CategoryViewHolder>{
-
     private List<Category> mListCategory;
     private Context mContext;
+    User user;
     public EditCategoryAdapter(List<Category> mListCategory, Context mContext) {
         this.mListCategory = mListCategory;
         this.mContext = mContext;
@@ -37,6 +56,7 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_product_edit, parent, false);
+        view.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new EditCategoryAdapter.CategoryViewHolder(view, mContext);
     }
 
@@ -48,14 +68,52 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
         }
         holder.categoryName.setText(category.getName());
         holder.bindData(category.getImage());
-
         holder.categoryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, EditProductActivity.class);
+                Intent intent = new Intent(mContext, ManageProductActivity.class);
                 intent.putExtra("title", category.getName());
                 intent.putExtra("idcategory", category.getId());
                 mContext.startActivity(intent);
+            }
+        });
+        holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, EditCategoryActivity.class);
+                intent.putExtra("categoryId", category.getId());
+                intent.putExtra("name", category.getName());
+                intent.putExtra("image", category.getImage());
+                mContext.startActivity(intent);
+            }
+        });
+        holder.buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle("Xác nhận");
+                builder.setMessage("Bạn có chắc chắn muốn clear không?");
+
+                // Xử lý khi người dùng chọn "Có"
+                builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Xử lý sự kiện khi người dùng chọn "Có"
+                        clearCategory(category.getId()); // Gọi phương thức để xóa dữ liệu
+                    }
+                });
+
+                // Xử lý khi người dùng chọn "Không"
+                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Không làm gì khi người dùng chọn "Không"
+                    }
+                });
+
+                // Hiển thị dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }
@@ -72,13 +130,15 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
         ImageView categoryImg;
         RelativeLayout categoryLayout;
         Target imageTarget;
+        Button buttonEdit, buttonClear;
 
         public CategoryViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             categoryName = itemView.findViewById(R.id.textProduct);
             categoryImg = itemView.findViewById(R.id.imageProduct);
             categoryLayout = itemView.findViewById(R.id.editCategoryLayout);
-
+            buttonEdit = itemView.findViewById(R.id.buttonEdit);
+            buttonClear = itemView.findViewById(R.id.buttonClear);
             imageTarget = new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
@@ -102,5 +162,35 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
         public void bindData(String imageUrl) {
             Picasso.get().load(imageUrl).into(imageTarget);
         }
+    }
+    private void clearCategory(String categoryId){
+        Map<String, Object> body = new HashMap<>();
+        body.put("userId", user.getId());
+        body.put("categoryId", categoryId);
+        user = SharedPreferences.getInstance(mContext).getUser();
+        APIService.apiService.deleteCategory(body).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        String json = response.body().string();
+                        JSONObject jsonObject = new JSONObject(json);
+                        JSONObject itemObject = jsonObject.getJSONObject("message");
+
+                        Toast.makeText(mContext, itemObject.toString(), Toast.LENGTH_SHORT).show();
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    // Xử lý khi phản hồi không thành công
+                    Toast.makeText(mContext, "Get data not success", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(mContext, "Call api error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

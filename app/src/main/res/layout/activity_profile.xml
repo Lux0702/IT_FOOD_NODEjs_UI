@@ -5,7 +5,6 @@
     tools:context=".activity.ProfileActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -110,7 +109,7 @@
 
                     <ImageView
                         android:id="@+id/imgGender"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_height="25dp"
                         android:layout_width="25dp"
                         android:scaleType="fitXY"
@@ -151,7 +150,7 @@
                     style="@style/txtMontserratromanregular14_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_25pxh"
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.89"
                     android:ellipsize="end"
@@ -185,7 +184,7 @@
                     style="@style/txtMontserratromanregular14_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_25pxh"
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.89"
                     android:ellipsize="end"
@@ -228,7 +227,7 @@
                     style="@style/txtMontserratromanregular14_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_25pxh"
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.89"
                     android:ellipsize="end"

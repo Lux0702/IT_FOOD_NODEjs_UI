@@ -41,7 +41,6 @@ public class EditProfileActivity extends AppCompatActivity {
     String phoneNumber, currentPassword;
     EditText edtPhone, edtUserName, edtEmail, edtGender,edtPassword;
     ImageView imgProfileEdit;
-
     User user;
     private APIService apiService;
     @Override
@@ -51,7 +50,6 @@ public class EditProfileActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_edit_profile);
         btnEditPasswd = findViewById(R.id.btnEditPasswd);
-
         findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

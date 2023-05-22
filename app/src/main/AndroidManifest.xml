@@ -20,7 +20,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="tiramisu">
         <activity
-
+            android:name=".activity.manager.AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.manager.EditProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.OrderHistoryActivity"
             android:exported="false" />
         <activity
@@ -33,13 +38,13 @@
             android:name=".activity.manager.AddCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.manager.ChangeCategoryActivity"
+            android:name=".activity.manager.EditCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.manager.EditProductActivity"
+            android:name=".activity.manager.ManageProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.manager.UploadProductActivity"
+            android:name=".activity.manager.ManageCategoryActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ShowProductActivity"

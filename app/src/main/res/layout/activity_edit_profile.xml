@@ -80,7 +80,6 @@
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
                             tools:ignore="ContentDescription"
-
                             tools:src="@drawable/ic_pencil" />
                     </FrameLayout>
                 </FrameLayout>

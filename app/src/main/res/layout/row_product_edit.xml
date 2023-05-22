@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/editCategoryLayout"
-    >
+    android:id="@+id/editCategoryLayout" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,16 +25,18 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/customer"
+                android:layout_marginStart="10dp"
                 android:paddingStart="0dp"
                 android:gravity="start"
                 android:background="@drawable/rectangle_bg_white_a700_75_border_bluegray_400_75_radius_4"/>
+
             <TextView
+                android:id="@+id/textProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
                 android:minLines="3"
-                android:id="@+id/textProduct"
-                android:text="name product"/>
+                android:paddingStart="10dp"
+                android:text="name product" />
         </LinearLayout>
 
         <LinearLayout

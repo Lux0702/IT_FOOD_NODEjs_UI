@@ -66,12 +66,8 @@ public interface APIService {
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
-
-
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
-
-
 
     @GET("categories")
     Call<ResponseBody> getCategories();
@@ -119,5 +115,16 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
-    @GET("products/all")
-    Call<ResponseBody> searchString(@Query("searchString") String searchString);}
+    @GET("products")
+    Call<ResponseBody> searchString(@Query("searchString") String searchString);
+    @PATCH("categories/update")
+    Call<ResponseBody> updateCategory(@Body Map<String, Object> body);
+    @POST("categories/add")
+    Call<ResponseBody> addCategory(@Body Map<String, Object> body);
+    @DELETE("categories/delete")
+    Call<ResponseBody> deleteCategory(@Body Map<String, Object> body);
+    @POST("products/add")
+    Call<ResponseBody> addProduct(@Body Map<String, Object> body);
+    @DELETE("products/delete")
+    Call<ResponseBody> deleteProduct(@Body Map<String, Object> body);
+}

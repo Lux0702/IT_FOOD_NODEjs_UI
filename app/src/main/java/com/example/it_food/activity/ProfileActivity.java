@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.example.it_food.R;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView txtId, txtUserName, txtEmail, txtPhone, txtAddress;
@@ -76,7 +77,6 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
     }
 
     public void onClick(View view) {

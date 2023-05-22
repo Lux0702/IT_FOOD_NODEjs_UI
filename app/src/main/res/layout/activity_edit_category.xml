@@ -46,7 +46,7 @@
                     android:layout_marginEnd="@dimen/_10pxh"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Edit Product"/>
+                    android:text="Edit Category"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -55,13 +55,12 @@
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/avatarFrame"
-                    android:layout_marginTop="10dp">
+                    android:layout_margin="10dp"
+                    android:id="@+id/avatarFrame">
                     <ImageView
-                        android:id="@+id/imgProductEdit"
+                        android:id="@+id/imgCategoryEdit"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:background="@drawable/rectangle_bg_gray_201_radius_2"
                         android:scaleType="centerCrop"
                         app:riv_oval="true"
                         tools:src="@tools:sample/avatars" />
@@ -116,10 +115,11 @@
                             android:layout_marginEnd="10dp"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="ID product"/>
+                            android:text="ID category"
+                            />
 
                         <EditText
-                            android:id="@+id/edtIdProduct"
+                            android:id="@+id/edtIdCategory"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
@@ -127,7 +127,7 @@
                             android:background="@drawable/white_pixel"
                             android:drawablePadding="8dp"
                             android:ellipsize="end"
-                            android:hint="Your id product"
+                            android:hint="Id category"
                             android:paddingLeft="10dp"
                             android:singleLine="true"
                             android:enabled="false"/>
@@ -175,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
                             <EditText
-                                android:id="@+id/edtPassword"
+                                android:id="@+id/edtNameCategory"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:layout_marginStart="0dp"
@@ -183,7 +183,7 @@
                                 android:background="@drawable/white_pixel"
                                 android:drawablePadding="8dp"
                                 android:ellipsize="end"
-                                android:hint="Name product"
+                                android:hint="Name category"
                                 android:paddingLeft="10dp"
                                 android:singleLine="true" />
 
@@ -192,88 +192,8 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtEmailSignUP"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Price" />
-
-                        <EditText
-                            android:id="@+id/edtEmail"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Price"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtGender"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Descripton" />
-
-                        <EditText
-                            android:id="@+id/edtDescript"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Describe product"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
