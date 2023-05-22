@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.manager.EditProductActivity">
+    tools:context=".activity.manager.ManageProductActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -55,12 +55,13 @@
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/avatarFrame">
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/imgProfileEdit"
+                    android:id="@+id/avatarFrame"
+                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:id="@+id/imgProductEdit"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:background="@drawable/rounded_layout"
+                        android:background="@drawable/rectangle_bg_gray_201_radius_2"
                         android:scaleType="centerCrop"
                         app:riv_oval="true"
                         tools:src="@tools:sample/avatars" />
@@ -115,9 +116,7 @@
                             android:layout_marginEnd="10dp"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="ID product"
-                            android:inputType="textPassword"
-                            />
+                            android:text="ID product"/>
 
                         <EditText
                             android:id="@+id/edtIdProduct"
@@ -229,47 +228,6 @@
                             android:drawablePadding="8dp"
                             android:ellipsize="end"
                             android:hint="Price"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtYourName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Quality" />
-
-                        <EditText
-                            android:id="@+id/edtQuatity"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Quatity product"
                             android:paddingLeft="10dp"
                             android:singleLine="true" />
                     </LinearLayout>

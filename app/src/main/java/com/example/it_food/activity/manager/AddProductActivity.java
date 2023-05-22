@@ -15,8 +15,6 @@ import com.example.it_food.R;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
 
-import org.checkerframework.checker.units.qual.C;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,37 +23,48 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddCategoryActivity extends AppCompatActivity {
-    EditText edtNameCategory;
+public class AddProductActivity extends AppCompatActivity {
+    EditText edtCategory, edtNameProduct, edtPrice, edtDesc;
     AppCompatButton btnAdd;
     User user;
-    ImageView imgCategoryEdit;
+    ImageView imgProductEdit;
+    String categoryId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_category);
-        edtNameCategory = findViewById(R.id.edtNameCategory);
-        imgCategoryEdit = findViewById(R.id.imgCategoryEdit);
-        user = SharedPreferences.getInstance(this).getUser();
+        setContentView(R.layout.activity_add_product);
+        Intent intent = getIntent();
+        categoryId = intent.getStringExtra("categoryId");
+        edtCategory = findViewById(R.id.edtCategory);
+        edtNameProduct = findViewById(R.id.edtNameProduct);
+        edtPrice = findViewById(R.id.edtPrice);
+        edtDesc = findViewById(R.id.edtDescript);
         btnAdd = findViewById(R.id.btnAdd);
+        user = SharedPreferences.getInstance(this).getUser();
+        imgProductEdit = findViewById(R.id.imgProductEdit);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addCategory();
+                addProduct();
             }
         });
     }
-    private void addCategory()
+    private void addProduct()
     {
         Map<String, Object> body = new HashMap<>();
-        body.put("name", edtNameCategory.getText().toString());
+        body.put("userId", user.getId()) ;
+        body.put("name", edtNameProduct.getText().toString());
+        body.put("description", edtDesc.getText().toString());
+        body.put("price", Float.parseFloat(edtPrice.getText().toString()));
+        body.put("quantity", 10);
+        body.put("categoryId", categoryId);
         body.put("image", "image");
-        body.put("userId", user.getId());
-        APIService.apiService.addCategory(body).enqueue(new Callback<ResponseBody>() {
+        APIService.apiService.addProduct(body).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()){
-                    Intent intent = new Intent(AddCategoryActivity.this, ManageCategoryActivity.class);
+                    Intent intent = new Intent(AddProductActivity.this, ManageCategoryActivity.class);
                     startActivity(intent);
                     finish();
                 }else {

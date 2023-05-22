@@ -2,6 +2,7 @@ package com.example.it_food.model;
 
 import java.io.Serializable;
 import com.example.it_food.model.User.Data;
+import com.google.gson.annotations.SerializedName;
 
 public class User implements Serializable {
     public User() {
@@ -250,7 +251,7 @@ public class User implements Serializable {
         public void setAddress(String address) {
             this.address = address;
         }
-
+        @SerializedName("avatar")
         private String avatar;
         private String address;
 

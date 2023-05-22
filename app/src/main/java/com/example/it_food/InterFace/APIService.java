@@ -71,7 +71,6 @@ public interface APIService {
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
 
-
     @GET("categories")
     Call<ResponseBody> getCategories();
     @GET("products/best-seller")
@@ -118,6 +117,16 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
+    @PATCH("categories/update")
+    Call<ResponseBody> updateCategory(@Body Map<String, Object> body);
+    @POST("categories/add")
+    Call<ResponseBody> addCategory(@Body Map<String, Object> body);
+    @DELETE("categories/delete")
+    Call<ResponseBody> deleteCategory(@Body Map<String, Object> body);
+    @POST("products/add")
+    Call<ResponseBody> addProduct(@Body Map<String, Object> body);
+    @DELETE("products/delete")
+    Call<ResponseBody> deleteProduct(@Body Map<String, Object> body);
 
     @GET("orders/status")
     Call<ResponseBody> getOrderHistory(@Query("userId") String id);
@@ -129,5 +138,4 @@ public interface APIService {
     Call<ResponseBody> getProductByOrderId(@QueryMap Map<String, Object> body);
 
 }
-
 

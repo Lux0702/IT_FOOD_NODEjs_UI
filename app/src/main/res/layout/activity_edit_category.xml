@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.EditProfileActivity">
+    tools:context=".activity.manager.ManageProductActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,13 +41,12 @@
                     style="@style/txtMontserratromanbold28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="9dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="@dimen/_10pxh"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Edit Profile"
-                    tools:text="Edit Profile" />
+                    android:text="Edit Category"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -56,12 +55,12 @@
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="10dp"
                     android:id="@+id/avatarFrame">
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/imgProfileEdit"
+                    <ImageView
+                        android:id="@+id/imgCategoryEdit"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:background="@drawable/rounded_layout"
                         android:scaleType="centerCrop"
                         app:riv_oval="true"
                         tools:src="@tools:sample/avatars" />
@@ -80,6 +79,7 @@
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
                             tools:ignore="ContentDescription"
+
                             tools:src="@drawable/ic_pencil" />
                     </FrameLayout>
                 </FrameLayout>
@@ -115,10 +115,11 @@
                             android:layout_marginEnd="10dp"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="Phone" />
+                            android:text="ID category"
+                            />
 
                         <EditText
-                            android:id="@+id/edtPhone"
+                            android:id="@+id/edtIdCategory"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
@@ -126,9 +127,10 @@
                             android:background="@drawable/white_pixel"
                             android:drawablePadding="8dp"
                             android:ellipsize="end"
-                            android:hint="Your phone"
+                            android:hint="Id category"
                             android:paddingLeft="10dp"
-                            android:singleLine="true" />
+                            android:singleLine="true"
+                            android:enabled="false"/>
                     </LinearLayout>
 
                     <ImageView
@@ -167,172 +169,31 @@
                             android:layout_marginEnd="10dp"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="Password" />
-
+                            android:text="Name product" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
-
                             <EditText
-                                android:id="@+id/edtPassword"
-                                android:layout_width="150dp"
+                                android:id="@+id/edtNameCategory"
+                                android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:layout_marginStart="0dp"
-                                android:layout_marginEnd="100dp"
+                                android:layout_marginEnd="10dp"
                                 android:background="@drawable/white_pixel"
                                 android:drawablePadding="8dp"
                                 android:ellipsize="end"
-                                android:enabled="false"
-                                android:inputType="textPassword"
+                                android:hint="Name category"
                                 android:paddingLeft="10dp"
                                 android:singleLine="true" />
 
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/btnEditPasswd"
-                                style="@style/btnSolidRounded_8"
-                                android:layout_width="@dimen/_80pxh"
-                                android:layout_height="30dp"
-                                android:layout_gravity="end"
-                                android:layout_marginStart="40dp"
-                                android:ellipsize="end"
-                                android:gravity="center"
-                                android:paddingStart="@dimen/_13pxh"
-                                android:paddingTop="@dimen/_5pxv"
-                                android:paddingEnd="@dimen/_13pxh"
-                                android:paddingBottom="@dimen/_5pxv"
-                                android:singleLine="true"
-                                android:text="Edit"
-                                android:textAllCaps="false"
-                                tools:text="Edit"
-                                tools:textSize="10sp" />
+
                         </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtEmailSignUP"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Email" />
-
-                        <EditText
-                            android:id="@+id/edtEmail"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Your email"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtYourName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Name" />
-
-                        <EditText
-                            android:id="@+id/edtUserName"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Your name"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtGender"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Gender" />
-
-                        <EditText
-                            android:id="@+id/edtGender"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:hint="Your gender"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -365,5 +226,4 @@
                 tools:text="Edit" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

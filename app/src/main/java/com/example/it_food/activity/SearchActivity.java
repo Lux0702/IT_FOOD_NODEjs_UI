@@ -10,18 +10,13 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.it_food.Adapter.EditProductAdapter;
 import com.example.it_food.Adapter.ProductAdapter;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
-import com.example.it_food.activity.manager.EditProductActivity;
 import com.example.it_food.model.ProductItem;
 
 import org.json.JSONArray;

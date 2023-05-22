@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.it_food.R;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView txtId, txtUserName, txtEmail, txtPhone, txtAddress;
@@ -33,7 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_profile);
-
         findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,12 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        /*imgLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.getInstance(getApplicationContext()).logout();
-            }
-        });*/
+
         if(SharedPreferences.getInstance(this).isLoggedIn()) {
             txtUserName = findViewById(R.id.txtUsername);
             txtEmail = findViewById(R.id.txtEmail);
@@ -96,7 +91,6 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
     }
 
     public void onClick(View view) {
