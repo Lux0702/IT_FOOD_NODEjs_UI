@@ -46,7 +46,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
         phone=getIntent().getStringExtra("phone_Number");
         currentPass=getIntent().getStringExtra("current_Password");
 
-<<<<<<< HEAD
         /*imageArrowleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,9 +54,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
             }
         });*/
-=======
 
->>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
         init();
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override

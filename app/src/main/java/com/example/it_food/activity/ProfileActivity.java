@@ -23,11 +23,8 @@ public class ProfileActivity extends AppCompatActivity {
     String txtPassword,phone;
     TextView  txtEdit;
     ImageView imgProfile, imgGender;
-<<<<<<< HEAD
     LinearLayout OrderHistory;
-=======
     ImageButton imgLogout;
->>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
 
     String profileImage;
     @Override

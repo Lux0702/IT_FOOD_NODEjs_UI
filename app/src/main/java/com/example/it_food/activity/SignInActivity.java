@@ -127,17 +127,9 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
     private void goToActivity() {
         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-
-=======
-
-
-    private void goToActivity(  ) {
-        Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
         //intent.putExtra()
->>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
         startActivity(intent);
         finish();
     }

@@ -68,17 +68,9 @@ public interface APIService {
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
-<<<<<<< HEAD
-    @PATCH("users/forgot-password")
-    Call<User> resetPasswordForgot(@Body User user);
-=======
-
-
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
 
-
->>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
 
     @GET("categories")
     Call<ResponseBody> getCategories();
@@ -126,15 +118,10 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
-<<<<<<< HEAD
-    @GET("products")
-    Call<ResponseBody> searchString(@Query("searchString") String searchString);
 
     @GET("orders/status")
     Call<ResponseBody> getOrderHistory(@Query("userId") String id);
-
-}
-=======
     @GET("products/all")
     Call<ResponseBody> searchString(@Query("searchString") String searchString);}
->>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
+
+
