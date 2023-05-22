@@ -1,14 +1,23 @@
 package com.example.it_food.activity.manager;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +27,7 @@ import android.widget.Toast;
 import com.example.it_food.Adapter.EditCategoryAdapter;
 import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
+import com.example.it_food.activity.EditProfileActivity;
 import com.example.it_food.model.Category;
 import com.example.it_food.model.ProductItem;
 

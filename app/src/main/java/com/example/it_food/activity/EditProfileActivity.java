@@ -64,6 +64,7 @@ public class EditProfileActivity extends AppCompatActivity {
     User user;
     private APIService apiService;
     private static final int PICK_IMAGE_REQUEST = 1;
+
     private ActivityResultLauncher<Intent> mActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -88,8 +89,6 @@ public class EditProfileActivity extends AppCompatActivity {
                     }
                 }
             });
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,7 +158,6 @@ public class EditProfileActivity extends AppCompatActivity {
         });
     }
 
-
     private void onCLickRequestPermission() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return;
@@ -209,8 +207,6 @@ public class EditProfileActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
         finish();
     }
-
-
 
     private void openGallery() {
         Intent intent = new Intent();
@@ -277,7 +273,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void gotoActivity() {
         Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
-        //intent.putExtra("m_profile",profile);
         startActivity(intent);
         finish();
     }

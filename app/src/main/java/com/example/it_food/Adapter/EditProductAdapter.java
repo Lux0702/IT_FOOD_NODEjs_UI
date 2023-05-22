@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.manager.EditCategoryActivity;
 import com.example.it_food.activity.manager.EditProductActivity;
+import com.example.it_food.activity.manager.ManageCategoryActivity;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.ProductItem;
 import com.example.it_food.model.User;
@@ -65,7 +67,7 @@ public class EditProductAdapter extends RecyclerView.Adapter<EditProductAdapter.
         if (productItem == null) {
             return;
         }
-        holder.categoryName.setText(productItem.getName());
+        holder.productName.setText(productItem.getName());
         holder.bindData(productItem.getImage());
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,17 +119,17 @@ public class EditProductAdapter extends RecyclerView.Adapter<EditProductAdapter.
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView categoryName;
-        ImageView categoryImg;
-        RelativeLayout categoryLayout;
+        TextView productName;
+        ImageView productImg;
+        RelativeLayout productLayout;
         Target imageTarget;
         Button buttonEdit, buttonClear;
 
         public ProductViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
-            categoryName = itemView.findViewById(R.id.textProduct);
-            categoryImg = itemView.findViewById(R.id.imageProduct);
-            categoryLayout = itemView.findViewById(R.id.editCategoryLayout);
+            productName = itemView.findViewById(R.id.textProduct);
+            productImg = itemView.findViewById(R.id.imageProduct);
+            productLayout = itemView.findViewById(R.id.editCategoryLayout);
             buttonEdit = itemView.findViewById(R.id.buttonEdit);
             buttonClear = itemView.findViewById(R.id.buttonClear);
 
@@ -135,8 +137,8 @@ public class EditProductAdapter extends RecyclerView.Adapter<EditProductAdapter.
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                     Drawable drawable = new BitmapDrawable(context.getResources(), bitmap);
-                    categoryImg.setImageDrawable(drawable);
-                    categoryImg.setBackground(drawable);
+                    productImg.setImageDrawable(drawable);
+                    productImg.setBackground(drawable);
                 }
 
                 @Override
@@ -156,26 +158,16 @@ public class EditProductAdapter extends RecyclerView.Adapter<EditProductAdapter.
         }
     }
     private void clearProduct(String productId){
-        Map<String, Object> body = new HashMap<>();
-        body.put("userId", user.getId());
-        body.put("productId", productId);
-        user = SharedPreferences.getInstance(mContext).getUser();
-        APIService.apiService.deleteProduct(body).enqueue(new Callback<ResponseBody>() {
+        String userId = "6454bd3cf82eec776eb7d842";
+        APIService.apiService.deleteProduct(userId,productId).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    try {
-                        String json = response.body().string();
-                        JSONObject jsonObject = new JSONObject(json);
-                        JSONObject itemObject = jsonObject.getJSONObject("message");
-
-                        Toast.makeText(mContext, itemObject.toString(), Toast.LENGTH_SHORT).show();
-                    } catch (JSONException | IOException e) {
-                        e.printStackTrace();
-                    }
+                    Toast.makeText(mContext, "Success", Toast.LENGTH_SHORT).show();
                 } else {
                     // Xử lý khi phản hồi không thành công
                     Toast.makeText(mContext, "Get data not success", Toast.LENGTH_SHORT).show();
+                    Log.e("TAG",productId);
                 }
             }
             @Override

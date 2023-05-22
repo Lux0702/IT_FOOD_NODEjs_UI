@@ -66,6 +66,41 @@ public interface APIService {
             @Part("id") RequestBody id,
             @Part MultipartBody.Part avatar
     );
+    @Multipart
+    @PATCH("categories/update")
+    Call<ResponseBody> updateCategory(
+            @Part("userId") RequestBody userId,
+            @Part("categoryId") RequestBody categoryId,
+            @Part("name") RequestBody name,
+            @Part MultipartBody.Part image
+    );
+    @Multipart
+    @POST("categories/add")
+    Call<ResponseBody> addCategory(
+            @Part("name") RequestBody name,
+            @Part MultipartBody.Part image,
+            @Part("userId") RequestBody userId
+    );
+    @Multipart
+    @POST("products/add")
+    Call<ResponseBody> addProduct(
+            @Part("userId") RequestBody userId,
+            @Part("name") RequestBody name,
+            @Part("description") RequestBody description,
+            @Part("price") RequestBody price,
+            @Part("quantity") RequestBody quantity,
+            @Part("categoryId") RequestBody categoryId,
+            @Part MultipartBody.Part image
+    );
+    @Multipart
+    @PATCH("products/update")
+    Call<ResponseBody> updateProduct(
+            @Part("userId") RequestBody userId,
+            @Part("productId") RequestBody productId,
+            @Part("name") RequestBody name,
+            @Part("price") RequestBody price,
+            @Part MultipartBody.Part image
+    );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
     @PATCH("users/forgot-password")
@@ -115,18 +150,11 @@ public interface APIService {
     @POST("comments/add")
     Call<ResponseBody> addComment(@Body Map<String, Object> body);
 
-    @DELETE("products/delete")
-    Call<ProductItem> deleteProduct(@Body ProductItem productItem);
-    @PATCH("categories/update")
-    Call<ResponseBody> updateCategory(@Body Map<String, Object> body);
-    @POST("categories/add")
-    Call<ResponseBody> addCategory(@Body Map<String, Object> body);
     @DELETE("categories/delete")
-    Call<ResponseBody> deleteCategory(@Body Map<String, Object> body);
-    @POST("products/add")
-    Call<ResponseBody> addProduct(@Body Map<String, Object> body);
+    Call<ResponseBody> deleteCategory(@Query("userId") String userId, @Query("categoryId") String categoryId);
+
     @DELETE("products/delete")
-    Call<ResponseBody> deleteProduct(@Body Map<String, Object> body);
+    Call<ResponseBody> deleteProduct(@Query("userId") String userId, @Query("productId") String categoryId);
 
     @GET("orders/status")
     Call<ResponseBody> getOrderHistory(@Query("userId") String id);

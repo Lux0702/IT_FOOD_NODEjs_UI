@@ -93,59 +93,6 @@
                 android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/rectangle_border_bluegray_400_radius_10"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.96"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txtPhoneSignUp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_1pxh"
-                            android:layout_marginEnd="10dp"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Category" />
-
-                        <EditText
-                            android:id="@+id/edtCategory"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="@drawable/white_pixel"
-                            android:drawablePadding="8dp"
-                            android:ellipsize="end"
-                            android:enabled="false"
-                            android:hint="Your category"
-                            android:paddingLeft="10dp"
-                            android:singleLine="true" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/imageCheckmark"
-                        android:layout_width="@dimen/_13pxh"
-                        android:layout_height="@dimen/_10pxh"
-                        android:layout_marginTop="@dimen/_36pxv"
-                        android:layout_marginEnd="@dimen/_29pxh"
-                        android:layout_marginBottom="@dimen/_16pxv"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_checkmark"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/img_checkmark" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"

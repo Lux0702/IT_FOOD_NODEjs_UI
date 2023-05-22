@@ -53,6 +53,7 @@ public class ManageProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ManageProductActivity.this, AddProductActivity.class);
+                intent.putExtra("categoryId", idcategory);
                 startActivity(intent);
             }
         });

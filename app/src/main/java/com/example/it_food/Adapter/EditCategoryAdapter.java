@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.activity.ResetPasswordActivity;
 import com.example.it_food.activity.manager.EditCategoryActivity;
+import com.example.it_food.activity.manager.ManageCategoryActivity;
 import com.example.it_food.activity.manager.ManageProductActivity;
 import com.example.it_food.helper.SharedPreferences;
 import com.example.it_food.model.Category;
@@ -42,6 +44,8 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 
 public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapter.CategoryViewHolder>{
     private List<Category> mListCategory;
@@ -164,26 +168,15 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
         }
     }
     private void clearCategory(String categoryId){
-        Map<String, Object> body = new HashMap<>();
-        body.put("userId", user.getId());
-        body.put("categoryId", categoryId);
-        user = SharedPreferences.getInstance(mContext).getUser();
-        APIService.apiService.deleteCategory(body).enqueue(new Callback<ResponseBody>() {
+        String userId = "6454bd3cf82eec776eb7d842";
+        APIService.apiService.deleteCategory(userId,categoryId).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    try {
-                        String json = response.body().string();
-                        JSONObject jsonObject = new JSONObject(json);
-                        JSONObject itemObject = jsonObject.getJSONObject("message");
-
-                        Toast.makeText(mContext, itemObject.toString(), Toast.LENGTH_SHORT).show();
-                    } catch (JSONException | IOException e) {
-                        e.printStackTrace();
-                    }
+                    Toast.makeText(mContext, "Success", Toast.LENGTH_SHORT).show();
                 } else {
                     // Xử lý khi phản hồi không thành công
-                    Toast.makeText(mContext, "Get data not success", Toast.LENGTH_SHORT).show();
+                    Log.e("TAG","response not success" +categoryId);
                 }
             }
             @Override
@@ -191,6 +184,5 @@ public class EditCategoryAdapter extends RecyclerView.Adapter<EditCategoryAdapte
                 Toast.makeText(mContext, "Call api error", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

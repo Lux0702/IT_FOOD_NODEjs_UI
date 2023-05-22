@@ -175,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
                             <EditText
-                                android:id="@+id/edtPassword"
+                                android:id="@+id/edtNameProduct"
                                 android:layout_width="wrap_content"
                                 android:layout_height="48dp"
                                 android:layout_marginStart="0dp"
@@ -219,7 +219,7 @@
                             android:text="Price" />
 
                         <EditText
-                            android:id="@+id/edtEmail"
+                            android:id="@+id/edtPrice"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginStart="0dp"
