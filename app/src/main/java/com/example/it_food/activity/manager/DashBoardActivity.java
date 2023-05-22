@@ -37,7 +37,9 @@ public class DashBoardActivity extends AppCompatActivity {
         findViewById(R.id.imageProduct).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(DashBoardActivity.this, UploadProductActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         findViewById(R.id.imageSales).setOnClickListener(new View.OnClickListener() {

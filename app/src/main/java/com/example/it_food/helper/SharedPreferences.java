@@ -15,6 +15,7 @@ public class SharedPreferences {
     private static final String KEY_ADDRESS = "address";
     private static final String KEY_GENDER = "gender";
     private static final String KEY_AVATAR = "avatar";
+    private static final String KEY_PASSWORD = "password";
     private  static   SharedPreferences mInstance;
     private static Context ctx;
 
@@ -39,6 +40,7 @@ public class SharedPreferences {
         editor.putString(KEY_ADDRESS, user.getAddress());
         editor.putString(KEY_GENDER, user.getGender());
         editor.putString(KEY_AVATAR, user.getAvatar());
+        editor.putString(KEY_PASSWORD, user.getPassword());
         editor.apply();
     }
     public boolean isLoggedIn() {
@@ -54,7 +56,8 @@ public class SharedPreferences {
                 sharedPreferences.getString(KEY_EMAIL, null),
                 sharedPreferences.getString(KEY_GENDER, null),
                 sharedPreferences.getString(KEY_AVATAR, null),
-                sharedPreferences.getString(KEY_ADDRESS, null)
+                sharedPreferences.getString(KEY_ADDRESS, null),
+                sharedPreferences.getString(KEY_PASSWORD, null)
         );
     }
     public void logout() {
@@ -62,13 +65,19 @@ public class SharedPreferences {
         android.content.SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
-        ctx.startActivity(new Intent(ctx, SignInActivity.class));
+        //ctx.startActivity(new Intent(ctx, SignInActivity.class));
     }
 
     public void updateImage(String profileImage) {
         android.content.SharedPreferences sharedPreferences = ctx.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         android.content.SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_AVATAR, profileImage);
+        editor.apply();
+    }
+    public void updatePassword(String profilePassword) {
+        android.content.SharedPreferences sharedPreferences = ctx.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        android.content.SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_PASSWORD, profilePassword);
         editor.apply();
     }
 }

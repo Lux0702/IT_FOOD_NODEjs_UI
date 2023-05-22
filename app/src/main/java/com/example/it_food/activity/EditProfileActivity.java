@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -39,19 +40,21 @@ public class EditProfileActivity extends AppCompatActivity {
     Button btnEditPasswd;
     ProgressDialog progressDialog;
     String phoneNumber, currentPassword;
-    EditText edtPhone, edtUserName, edtEmail, edtGender,edtPassword;
+    EditText edtPhone, edtUserName, edtEmail, edtGender, edtPassword;
     ImageView imgProfileEdit;
-
+    private Uri selectedImageUri;
     User user;
     private APIService apiService;
+    private static final int PICK_IMAGE_REQUEST = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_edit_profile);
         btnEditPasswd = findViewById(R.id.btnEditPasswd);
-
+        imgProfileEdit = findViewById(R.id.imgProfileEdit);
         findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,12 +63,12 @@ public class EditProfileActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
             }
         });
-        if(SharedPreferences.getInstance(this).isLoggedIn()) {
+        if (SharedPreferences.getInstance(this).isLoggedIn()) {
             edtUserName = findViewById(R.id.edtUserName);
             edtEmail = findViewById(R.id.edtEmail);
             edtPhone = findViewById(R.id.edtPhone);
             edtGender = findViewById(R.id.edtGender);
-            edtPassword= findViewById(R.id.edtPassword);
+            edtPassword = findViewById(R.id.edtPassword);
             imgProfileEdit = findViewById(R.id.imgProfileEdit);
 
             user = SharedPreferences.getInstance(this).getUser();
@@ -73,9 +76,9 @@ public class EditProfileActivity extends AppCompatActivity {
             edtPhone.setText(user.getPhoneNumber());
             edtUserName.setText(user.getName());
             edtGender.setText(user.getGender());
-            edtPassword.setText(getIntent().getStringExtra("m_Password"));
-            currentPassword=edtPassword.getText().toString();
-            phoneNumber=edtPhone.getText().toString();
+            edtPassword.setText(user.getPassword());
+            currentPassword = edtPassword.getText().toString();
+            phoneNumber = edtPhone.getText().toString();
             Glide.with(getApplicationContext()).load(user.getAvatar()).into(imgProfileEdit);
 
         } else {
@@ -94,35 +97,42 @@ public class EditProfileActivity extends AppCompatActivity {
         btnEditPasswd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoChangePasswordActivity(phoneNumber,currentPassword);
+                gotoChangePasswordActivity(phoneNumber, currentPassword);
             }
         });
     }
+
     private void chooseImage() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent();
         intent.setType("image/*");
-        startActivityForResult(intent, 1);
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
     }
+
     Uri imageUri;
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        /*if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri imageUri = data.getData();
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
+            imgProfileEdit
 
             // create a file from the image URI
             File file = new File(getRealPathFromURI(imageUri));
 
             // create a request body with the file
-            RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
+            //RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
 
             // create a multipart request with the request body
-            MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", file.getName(), requestBody);
-            RequestBody idRequestBody = RequestBody.create(MediaType.parse("text/plain"), user.getId());
+            //MultipartBody.Part imagePart = MultipartBody.Part.createFormData("avatar", file.getName(), requestBody);
+
+            //RequestBody idRequestBody = RequestBody.create(MediaType.parse("text/plain"), user.getId());
             // upload the image using the API service
-            apiService.uploadImage(idRequestBody,imagePart).enqueue(new Callback<ResponseBody>() {
+            *//*apiService.uploadImage(idRequestBody,imagePart).enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     if (response.isSuccessful()) {
@@ -138,20 +148,38 @@ public class EditProfileActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     Toast.makeText(EditProfileActivity.this, "Failed " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            });
+            });*//*
 
+        }*/
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            selectedImageUri = data.getData();
+            Log.d("TAG", "Selected Image Uri: " + selectedImageUri); // Thêm dòng này
+
+            imgProfileEdit.setImageURI(selectedImageUri);
+            uploadImageToApi();
         }
     }
 
+
     private String getRealPathFromURI(Uri uri) {
-        String[] projection = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
-        String path = cursor.getString(column_index);
-        cursor.close();
-        return path;
+        String filePath = null;
+        Cursor cursor = null;
+        try {
+            String[] projection = {MediaStore.Images.ImageColumns.DATA};
+            cursor = getContentResolver().query(uri, projection, null, null, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA);
+                filePath = cursor.getString(columnIndex);
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return filePath;
     }
+
+
     private void gotoChangePasswordActivity(String phoneNumber, String currentPassword) {
         Intent intent = new Intent(EditProfileActivity.this, ChangePasswordActivity.class);
         intent.putExtra("phone_Number", phoneNumber);
@@ -159,5 +187,32 @@ public class EditProfileActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
         finish();
+    }
+
+    private void uploadImageToApi() {
+        if (selectedImageUri != null) {
+            String idValue = user.getId();
+            File imageFile = new File(getRealPathFromURI(selectedImageUri)); // Lấy đường dẫn thực tế của ảnh từ Uri
+            RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), imageFile);
+            MultipartBody.Part avartaPart = MultipartBody.Part.createFormData("avatar", imageFile.getName(), requestFile);
+
+            // Tạo RequestBody cho trường "id"
+            RequestBody id = RequestBody.create(MediaType.parse("id"), idValue);
+
+            // Tạo API service
+            APIService.apiService.uploadImage(id, avartaPart).enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    Toast.makeText(getApplicationContext(), "Upload successful", Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }
     }
 }

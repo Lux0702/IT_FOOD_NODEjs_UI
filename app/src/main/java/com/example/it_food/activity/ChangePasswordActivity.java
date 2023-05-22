@@ -18,6 +18,7 @@ import com.example.it_food.InterFace.APIService;
 import com.example.it_food.R;
 import com.example.it_food.model.User;
 
+import org.checkerframework.checker.units.qual.C;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +34,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     private  String  phone,currentPass,newPass,confirmPass,id;
     Button btnNext;
-    ImageView imageArrowleft;
+    ImageView imgArrowleft;
     EditText etNewPassword,etOldPassword,etConfirmPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         phone=getIntent().getStringExtra("phone_Number");
         currentPass=getIntent().getStringExtra("current_Password");
 
+<<<<<<< HEAD
         /*imageArrowleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +55,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_left, android.R.anim.fade_out);
             }
         });*/
+=======
+
+>>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
         init();
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +108,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         etOldPassword = findViewById(R.id.etOldPassword);
         etNewPassword = findViewById(R.id.etNewPasswordFo);
         etConfirmPassword=findViewById(R.id.etConfirmPasswor);
-        imageArrowleft=findViewById(R.id.imageArrowleft);
+        imgArrowleft=findViewById(R.id.imageArrowleft);
         btnNext = findViewById(R.id.btnNext);
 
     }
@@ -144,6 +149,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ChangePasswordActivity.this, "Change Password succcess", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ChangePasswordActivity.this, ProfileActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(ChangePasswordActivity.this, "Error connect", Toast.LENGTH_SHORT).show();
                 }

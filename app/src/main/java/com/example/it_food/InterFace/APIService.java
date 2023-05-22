@@ -23,6 +23,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.POST;
@@ -58,16 +59,26 @@ public interface APIService {
 
     @PATCH("cart-items/update")
     Call<ResponseBody> updateProductInCart(@Body Map<String, Object> body);
-
+    //@Multipart
+    @Multipart
     @POST("users/upload-file")
     Call<ResponseBody> uploadImage(
             @Part("id") RequestBody id,
-            @Part MultipartBody.Part image
+            @Part MultipartBody.Part avatar
     );
     @PATCH("users/reset-password")
     Call<User> ChangePassword(@Body User user);
+<<<<<<< HEAD
     @PATCH("users/forgot-password")
     Call<User> resetPasswordForgot(@Body User user);
+=======
+
+
+    @PATCH("users/forgot-password")
+    Call<User> resetPasswordForgot(@Body User user);
+
+
+>>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea
 
     @GET("categories")
     Call<ResponseBody> getCategories();
@@ -115,6 +126,7 @@ public interface APIService {
 
     @DELETE("products/delete")
     Call<ProductItem> deleteProduct(@Body ProductItem productItem);
+<<<<<<< HEAD
     @GET("products")
     Call<ResponseBody> searchString(@Query("searchString") String searchString);
 
@@ -122,3 +134,7 @@ public interface APIService {
     Call<ResponseBody> getOrderHistory(@Query("userId") String id);
 
 }
+=======
+    @GET("products/all")
+    Call<ResponseBody> searchString(@Query("searchString") String searchString);}
+>>>>>>> f2ef460df252c180f8e6b6c4e1bdf10f7a261dea

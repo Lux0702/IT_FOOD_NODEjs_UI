@@ -142,13 +142,10 @@ public class VerificationCodeActivity extends AppCompatActivity {
                             FirebaseUser user = task.getResult().getUser();
                             // Update UI
                             Toast.makeText(VerificationCodeActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                            if(mresetPassword==true)
-                            {
+
                                 gotoResetPassActivity(user.getPhoneNumber());
-                            }
-                            else{
-                                // chuyển qua activity khi register success
-                            }
+
+
                         }
                         else {
 

@@ -36,12 +36,12 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/img_arrowleft_black_900_16x9"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft_black_900_16x9"/>
-                <EditText
+                <TextView
                     android:id="@+id/txtEditProfile"
                     style="@style/txtMontserratromanbold28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0.0dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="@dimen/_10pxh"
                     android:ellipsize="end"
@@ -169,32 +169,33 @@
                             android:ellipsize="end"
                             android:singleLine="true"
                             android:text="Password" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
+
                             <EditText
                                 android:id="@+id/edtPassword"
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="48dp"
                                 android:layout_marginStart="0dp"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="100dp"
                                 android:background="@drawable/white_pixel"
                                 android:drawablePadding="8dp"
                                 android:ellipsize="end"
-                                android:hint="Your password"
+                                android:enabled="false"
                                 android:inputType="textPassword"
                                 android:paddingLeft="10dp"
-                                android:singleLine="true"
-                                android:enabled="false" />
+                                android:singleLine="true" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnEditPasswd"
                                 style="@style/btnSolidRounded_8"
                                 android:layout_width="@dimen/_80pxh"
-                                android:layout_height="@dimen/_29pxv"
+                                android:layout_height="30dp"
                                 android:layout_gravity="end"
-                                android:layout_marginStart="150dp"
+                                android:layout_marginStart="40dp"
                                 android:ellipsize="end"
                                 android:gravity="center"
                                 android:paddingStart="@dimen/_13pxh"
@@ -203,9 +204,9 @@
                                 android:paddingBottom="@dimen/_5pxv"
                                 android:singleLine="true"
                                 android:text="Edit"
-                                tools:textSize="10sp"
                                 android:textAllCaps="false"
-                                tools:text="Edit" />
+                                tools:text="Edit"
+                                tools:textSize="10sp" />
                         </LinearLayout>
                     </LinearLayout>
 

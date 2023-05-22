@@ -48,6 +48,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_reset_password);
         mphoneNumber=getIntent().getStringExtra("phone_Number");
+        mphoneNumber="0"+ mphoneNumber.substring(3);
         init();
         findViewById(R.id.imageArrowleft).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +131,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ResetPasswordActivity.this, "Reset Password succcess", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ResetPasswordActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(ResetPasswordActivity.this, "Error connect", Toast.LENGTH_SHORT).show();
                 }
